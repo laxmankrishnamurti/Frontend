@@ -1,5 +1,14 @@
 import ReactDOM from "react-dom"
+import React from "react";
+import App from './App'
 
-const root = document.getElementById('root')
+// ReactDOM.createRoot(document.getElementById('root').render(
+//     <React.StrictMode>
+//         <App />
+//     </React.StrictMode>
+// ));
 
-ReactDOM.render(<h1>Hello world!!! </h1>, root)
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+)
