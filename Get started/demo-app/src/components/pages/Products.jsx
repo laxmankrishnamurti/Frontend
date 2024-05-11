@@ -1,18 +1,30 @@
-import productImage from "../../images/productImage.png"
+import Product from "./Product";
+import { useState, useEffect } from "react";
 
 function Home() {
+
+    const [products, setProducts] = useState();
+
+    useEffect(() => {
+        fetch('/users')
+            .then((response) => {
+                response.json()
+            })
+            .then((product) => {
+                console.log(product)
+            })
+    }, [])
+
     return (
         <>
             <div>
-                <div className="w-1/4 flex items-center flex-col justify-center rounded-md p-4 shadow-md">
-                    <div className="flex w-full justify-center">
-                        <img className="w-1/2" src={productImage} alt="pizzaImage" />
-                    </div>
-                    <div className="w-full flex justify-around mt-4">
-                        <p className="bg-orange-400 p-2 rounded"><span>₹</span>500</p>
-                        <p className="bg-orange-400 p-2 rounded">10<span>%</span></p>
-                    </div>
-                </div>
+                <h1 className="pl-16 text-3xl font-medium my-8">Products</h1>
+            </div>
+            <div className="flex mt-4 justify-evenly">
+                <Product />
+                <Product />
+                <Product />
+                <Product />
             </div>
         </>
     )
