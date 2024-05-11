@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from '../images/pizzaLogo.png'
 
 function Navigation() {
     return (
