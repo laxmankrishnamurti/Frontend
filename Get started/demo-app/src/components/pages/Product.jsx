@@ -5,6 +5,10 @@ function Product(props) {
 
     const { product } = props
 
+    const cart = (cart) => {
+        console.log(cart, "Clicked")
+    }
+
     return (
         <>
             <Link to={`/products/${product.id}`} className="w-1/5 flex items-center flex-col justify-center rounded-md p-4 shadow-md hover:shadow-2xl cursor-pointer transition-all duration-300 ease">
@@ -16,7 +20,7 @@ function Product(props) {
                     <div className="w-full flex justify-around mt-4">
                         <p className="bg-orange-400 p-2 rounded-xl"><span>₹</span>{product.price}</p>
                         <p className="bg-red-400 p-2 rounded-xl">- {product.discount}<span>%</span></p>
-                        <p className="bg-green-400 p-2 rounded-xl">Add</p>
+                        <button onClick={(e) => { cart(e.target) }} className="bg-green-400 p-2 rounded-xl">Add</button>
                     </div>
                 </div>
             </Link>

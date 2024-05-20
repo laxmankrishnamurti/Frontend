@@ -13,7 +13,7 @@ function SingleProduct() {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:3001/products/${params.id}`)
+        fetch(`http://localhost:3006/products/${params.id}`)
             .then((response) => {
                 return response.json()
             })
