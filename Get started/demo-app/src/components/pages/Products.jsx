@@ -6,7 +6,7 @@ function Home() {
 
     const [products, setProducts] = useState([]);
 
-    const { name } = useContext(CartContext);
+    // const { name } = useContext(CartContext);
 
     useEffect(() => {
         fetch('http://localhost:3006/products')
@@ -24,7 +24,7 @@ function Home() {
     return (
         <>
             <div>
-                <h1 className="pl-16 text-3xl font-medium my-8">Products {name}</h1>
+                <h1 className="pl-16 text-3xl font-medium my-8">Products</h1>
             </div>
             <div className="flex flex-wrap mt-4 justify-evenly p-8">
                 {
