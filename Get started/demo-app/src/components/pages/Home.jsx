@@ -5,7 +5,7 @@ import Products from "./Products"
 function Home() {
     return (
         <>
-            <div className="flex items-center" style={{ height: 580 }}>
+            <div className="flex items-center" style={{ height: 560 }}>
                 <div className="w-1/2 pl-16">
                     <h2 className="text-5xl mb-8 font-serif">Are you hungry?</h2>
                     <Link><a className="bg-orange-500 text-white py-3 px-4 rounded-md text-xl border-2 

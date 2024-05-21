@@ -1,15 +1,18 @@
 import productImage from "../../images/productImage.png";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../CartContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 function Product(props) {
+
+    const [isAdding, setIsAdding] = useState(false);
 
     const { cart, setCart } = useContext(CartContext);
     const { product } = props;
 
     const addToCart = (event, product) => {
         event.preventDefault();
+
 
         const _cart = { ...cart };  //Because of By-reference  [ {} = empty object]
 
@@ -29,9 +32,11 @@ function Product(props) {
 
         _cart.totalItems++;
 
-        setCart(_cart)
-
-
+        setCart(_cart);
+        setIsAdding(true);
+        setTimeout(() => {
+            setIsAdding(false)
+        }, 1000)
     }
 
     return (
@@ -45,7 +50,7 @@ function Product(props) {
                     <div className="w-full flex justify-around mt-4">
                         <p className="bg-orange-400 p-2 rounded-xl"><span>₹</span>{product.price}</p>
                         <p className="bg-red-400 p-2 rounded-xl">- {product.discount}<span>%</span></p>
-                        <button onClick={(e) => { addToCart(e, product) }} className="bg-green-400 p-2 rounded-xl">Add</button>
+                        <button disabled={isAdding} onClick={(e) => { addToCart(e, product) }} className={`${isAdding ? 'bg-green-400 px-3' : 'bg-yellow-400'}  p-2 rounded-xl`}>ADD{isAdding ? 'ED' : ''}</button>
                     </div>
                 </div>
             </Link>
