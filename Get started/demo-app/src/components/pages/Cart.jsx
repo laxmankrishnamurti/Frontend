@@ -1,10 +1,35 @@
 import productImage from '../../images/productImage.png';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../../CartContext';
 
 function Home() {
 
+    const [product, setProduct] = useState([])
     const { cart } = useContext(CartContext)
+
+    useEffect(() => {
+
+        if (!cart.items || Object.keys(cart.items).length === 0) {
+            return;
+        }
+
+        fetch('http://localhost:3006/products', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ id: Object.keys(cart.items) })
+        })
+            .then((response) => {
+                return response.json()
+            })
+            .then((itemData) => {
+                setProduct(itemData)
+            })
+
+    }, [cart])
+
+    console.log("Product from cart page :", product)
 
     return (
         <>
