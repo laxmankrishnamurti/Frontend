@@ -58,7 +58,6 @@ function App() {
           />
 
           <label htmlFor="numberCheckBox">Number</label>
-          {console.log("Does number allowed :", numberAllowed)}
 
           <button type="submit" className="bg-pink-400 text-white px-6 py-2 rounded-md hover:bg-black transition-all ease-in duration-200 mt-2">Submit</button>
         </form>
