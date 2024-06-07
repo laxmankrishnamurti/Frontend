@@ -4,6 +4,7 @@ function App() {
   const [number, setNumber] = useState(0)
   const [username, setUsername] = useState("")
   const [state, setState] = useState("")
+  const [numberAllowed, setNumberAllowed] = useState(false)
 
   return (
     <>
@@ -32,7 +33,7 @@ function App() {
             onChange={(e) => setUsername(() => e.target.value)}
           />
 
-          <select value={state} onChange={(e) => setState(() => e.target.value)}>
+          <select value={state} onChange={(e) => setState(() => e.target.value)} className="mr-2">
             <option>Select your state</option>
             <option>Bihar</option>
             <option>Gujarat</option>
@@ -48,7 +49,16 @@ function App() {
             <option>Kerala</option>
           </select>
 
-          {console.log("User state : ", state)}
+          <input
+            type="checkbox"
+            id="numberCheckBox"
+            className="mr-1"
+            value={numberAllowed}
+            onChange={() => setNumberAllowed((prev) => !prev)}
+          />
+
+          <label htmlFor="numberCheckBox">Number</label>
+          {console.log("Does number allowed :", numberAllowed)}
 
           <button type="submit" className="bg-pink-400 text-white px-6 py-2 rounded-md hover:bg-black transition-all ease-in duration-200 mt-2">Submit</button>
         </form>
