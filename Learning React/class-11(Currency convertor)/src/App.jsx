@@ -18,7 +18,7 @@ function App() {
   const currencyOptions = Object.keys(currencyData)
 
   const convertAmount = () => {
-    setConvertedAmount((amount * currencyData[toCurrency]))
+    setConvertedAmount((amount * currencyData[toCurrency]).toFixed(3))
   }
 
   console.log("amount value is : ", amount);
@@ -40,7 +40,7 @@ function App() {
               <div>
                 <label htmlFor="inputNumber">From</label>
                 <input
-                  className="p-2 rounded-md"
+                  className="px-4 py-2.5 rounded-md"
                   type="number"
                   id="inputNumber"
                   placeholder="Enter amount"
@@ -51,6 +51,7 @@ function App() {
               <div>
                 <label htmlFor="fromCurrencySelection">Currency</label>
                 <select
+                  className="px-4 py-3 rounded-md"
                   id="fromCurrencySelection"
                   value={fromCurrency}
                   onChange={(e) => setFromCurrency(() => e.target.value)}
@@ -66,17 +67,17 @@ function App() {
               <div>
                 <label className="block" htmlFor="convertedAmount">To</label>
                 <input
-                  className="p-2 rounded-md"
+                  className="px-4 py-2.5 rounded-md"
                   type="text"
                   id="convertedAmount"
                   placeholder="Converted amount"
                   value={convertedAmount}
                 />
               </div>
-              <div className="ml-4">
+              <div>
                 <label htmlFor="toCurrencySelection">Currency</label>
                 <select
-                  className="block"
+                  className="px-4 py-3 rounded-md"
                   id="toCurrencySelection"
                   value={toCurrency}
                   onChange={(e) => setToCurrency(() => e.target.value)}
@@ -91,11 +92,11 @@ function App() {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="bg-black text-white px-4 py-2 rounded-md mt-8"
+              className="bg-black text-white px-4 py-3 rounded-md mt-8"
               onClick={convertAmount}
             >Convert {fromCurrency} to {toCurrency}</button>
             <button
-              className="bg-sky-400 ml-4 text-black px-4 py-2 rounded-md mt-8"
+              className="bg-sky-400 ml-4 text-black px-4 py-3 rounded-md mt-8"
               onClick={swapCurrency}
             >Swap Currency</button>
           </div>
