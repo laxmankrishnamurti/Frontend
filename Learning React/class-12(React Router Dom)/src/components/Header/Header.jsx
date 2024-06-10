@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom"
 function Header() {
     return (
         <>
-            <div className="w-full h-16 shadow shadow-black flex justify-evenly items-center">
+            <div className="w-full h-16 shadow-sm shadow-black flex justify-evenly items-center">
                 <div>
                     <Link to='/'>
                         <h1 className="text-2xl font-bold">Your <span className="text-red-600 font-bold">Logo</span></h1>
