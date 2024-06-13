@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread Operator</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <h1>Spread Operator</h1>
+  </body>
+  <script>
+    const name = [
+      "Manikant",
+      "Sachin",
+      "Laxman ",
+      "Santosh",
+      ["Harshad ", "Sonu"],
+    ];
+    console.log("Name is : ", name);
+    const newName = [...name];
+    console.log("New name is : ", newName);
+
+    const users = [
+      { id: 1, name: "Laxman" },
+      { id: 2, name: "Ram" },
+      { id: 3, name: "Arjun" },
+      { id: 4, name: "Krishna" },
+      { id: 5, name: "Harshad" },
+    ];
+
+    console.log("Users is  : ", users);
+
+    const spreadUser = [{ id: 6, name: "Hari om" }, ...users];
+    console.log("Spread Operated user  : ", spreadUser);
+  </script>
+</html>
