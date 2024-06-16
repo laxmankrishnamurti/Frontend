@@ -1,11 +1,38 @@
+import { useEffect, useState } from "react"
+import { useDispatch } from 'react-redux'
+import authService from "./appwrite/auth"
+import { login, logout } from './store/authSlice'
+import { Header, Footer } from './components/index'
 
 function App() {
+  const [loading, setLoading] = useState(true)
+  const dispatch = useDispatch()
 
-  return (
-    <>
-      <h1 className="bg-violet-500 text-center text-white font-bold text-2xl p-4 shadow-md shadow-black">Mega Blog Project</h1>
-    </>
-  )
+  useEffect(() => {
+    authService.getCurrentUser()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login({ userData }))
+        } else {
+          dispatch(logout())
+        }
+      })
+      .finally(() => {
+        return setLoading(false)
+      })
+  }, [loading])
+
+  return !loading ? (
+    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
+      <div className="w-full block">
+        <Header />
+        <main>
+          <p>This is outlet section which is empty as of now</p>
+        </main>
+        <Footer />
+      </div>
+    </div>
+  ) : null
 }
 
 export default App
