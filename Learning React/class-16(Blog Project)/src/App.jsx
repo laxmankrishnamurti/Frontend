@@ -25,11 +25,11 @@ function App() {
   return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
-        <Header />
+        {/* <Header /> */}
         <main>
           <p>This is outlet section which is empty as of now</p>
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   ) : null
