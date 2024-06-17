@@ -8,6 +8,7 @@ import { Home, Login, Signup, AllPosts, AddPost, EditPost, Post } from './pages/
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { AuthLayout } from './components/index.js'
 
+// Let's create the project from scratch 
 
 const router = createBrowserRouter([
   {
