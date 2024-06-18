@@ -9,9 +9,9 @@ function EditPost() {
     const { slug } = useParams()
     const navigate = useNavigate()
 
-    useEffect(async () => {
+    useEffect(() => {
         if (slug) {
-            await service.getPost(slug)
+            service.getPost(slug)
                 .then((post) => {
                     if (post) {
                         setPost(post)

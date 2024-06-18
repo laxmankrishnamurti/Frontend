@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 function Header() {
-
-    const authStatus = useSelector((state) => state.auth.status)
+    // Safely access state.auth.status with optional chaining
+    const authStatus = useSelector((state) => state.auth?.status)
 
     const navigate = useNavigate()
 
@@ -40,7 +40,7 @@ function Header() {
 
     return (
 
-        <Header className="py-3 shadow bg-gray-500">
+        <header className="py-3 shadow bg-gray-500">
             <Container>
                 <nav className='flex'>
                     <div className='mr-4'>
@@ -66,7 +66,7 @@ function Header() {
                     </ul>
                 </nav>
             </Container>
-        </Header>
+        </header>
     )
 }
 

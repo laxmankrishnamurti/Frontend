@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import authService from "./appwrite/auth"
 import { login, logout } from './store/authSlice'
 import { Header, Footer } from './components/index'
+import { Outlet } from "react-router-dom"
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -17,17 +18,17 @@ function App() {
           dispatch(logout())
         }
       })
-      .finally(() => {
-        return setLoading(false)
-      })
+      .finally(() => setLoading(false))
+
   }, [loading])
+
 
   return !loading ? (
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
         <Header />
         <main>
-          <p>This is outlet section which is empty as of now</p>
+          <Outlet />
         </main>
         <Footer />
       </div>
