@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-function AuthLayout({ children, authentication = true }) {
+function AuthLayout({ children, authentication = false }) {
 
     const navigate = useNavigate()
     const [loader, setLoader] = useState(true)
@@ -10,11 +10,20 @@ function AuthLayout({ children, authentication = true }) {
 
     useEffect(() => {
 
-        if (authentication && authStatus !== authentication) {
+        if (authentication && (authStatus !== authentication)) {
             navigate("/login")
-        } else if (!authentication && authStatus !== authentication) {
+        } else if (!authentication && (authStatus !== authentication)) {
             navigate("/")
         }
+
+        // if ((authentication === true) && (authStatus === true)) {
+        //     navigate('/')
+        // } else if ((authentication === false) && (authStatus === false)) {
+        //     navigate('/login')
+        // } else {
+        //     navigate('/signup')
+        // }
+
         setLoader(false)
     }, [authStatus, navigate, authentication])
 
