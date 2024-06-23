@@ -2,7 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, Route, RouterProvider, createRoutesFromElements } from 'react-router-dom'
-import { Home, About, Login, Contact } from './components/index.js'
+import { Home, About, Login, Contact, Profile } from './components/index.js'
+import { getProfile } from './components/Profile/Profile.jsx'
 import Root from './Root.jsx'
 
 
@@ -13,6 +14,7 @@ const route = createBrowserRouter(
       <Route path='about' element={<About />}></Route>
       <Route path='login' element={<Login />}></Route>
       <Route path='contact' element={<Contact />}></Route>
+      <Route path='profile' element={<Profile />} loader={getProfile} ></Route>
     </Route>
   )
 )

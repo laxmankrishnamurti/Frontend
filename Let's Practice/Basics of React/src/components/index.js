@@ -4,6 +4,7 @@ import Login from './Login'
 import Contact from './Contact/Contact'
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import Profile from './Profile/Profile'
 
 export {
     Home,
@@ -11,5 +12,6 @@ export {
     Login,
     Contact,
     Header,
-    Footer
+    Footer,
+    Profile
 }

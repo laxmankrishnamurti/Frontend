@@ -7,7 +7,9 @@ function Root() {
     return (
         <div>
             <Header />
-            <Outlet />
+            <div className='text-center mt-4'>
+                <Outlet />
+            </div>
             <Footer />
         </div>
     )
