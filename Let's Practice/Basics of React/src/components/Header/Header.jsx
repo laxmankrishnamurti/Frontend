@@ -8,7 +8,9 @@ function Header() {
         <>
             <header className='flex justify-evenly items-center bg-pink-400 text-white h-16'>
                 <div>
-                    <span>Logo</span>
+                    <Link to="/">
+                        <span className='text-2xl font-bold'>Logo</span>
+                    </Link>
                 </div>
                 <div>
                     <ul>

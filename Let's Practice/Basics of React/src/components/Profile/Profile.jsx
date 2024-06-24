@@ -29,6 +29,8 @@ export default Profile
 
 
 export const getProfile = async () => {
-    const response = await fetch('https://api.github.com/users/laxmankrishnamurti')
+    const user = 'https://api.github.com/users/hiteshchoudhary';
+    const user1 = 'https://api.github.com/users/laxmankrishnamurti'
+    const response = await fetch(user1)
     return response.json()
 }
