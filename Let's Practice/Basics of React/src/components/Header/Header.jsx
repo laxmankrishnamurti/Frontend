@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react'
-import { Link, NavLink, useInRouterContext } from 'react-router-dom'
-import { Profile } from '../index'
+import { Link, NavLink } from 'react-router-dom'
 
 function Header() {
 
@@ -8,36 +6,26 @@ function Header() {
         <>
             <header className='flex justify-evenly items-center bg-pink-400 text-white h-16'>
                 <div>
-                    <Link to="/">
+                    <Link to='/'>
                         <span className='text-2xl font-bold'>Logo</span>
                     </Link>
                 </div>
                 <div>
                     <ul>
                         <li className='inline mr-8'>
-                            <Link to="/">
-                                <NavLink to="/" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Home</NavLink>
-                            </Link>
+                            <NavLink to="/" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Home</NavLink>
                         </li>
                         <li className='inline mr-8'>
-                            <Link to="/about">
-                                <NavLink to="/about" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>About</NavLink>
-                            </Link>
+                            <NavLink to="/about" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>About</NavLink>
                         </li>
                         <li className='inline mr-8'>
-                            <Link to="/login">
-                                <NavLink to="/login" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Login</NavLink>
-                            </Link>
+                            <NavLink to="/login" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Login</NavLink>
                         </li>
                         <li className='inline mr-8'>
-                            <Link to="/contact">
-                                <NavLink to="contact" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Contact</NavLink>
-                            </Link>
+                            <NavLink to="contact" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Contact</NavLink>
                         </li>
                         <li className='inline mr-8'>
-                            <Link to="/profile">
-                                <NavLink to="/profile" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Profile</NavLink>
-                            </Link>
+                            <NavLink to="/profile" className={({ isActive }) => `${isActive ? "text-black" : "text-white"} hover:text-black duration-200 transition-all ease-in-out `}>Profile</NavLink>
                         </li>
                     </ul>
                 </div>
