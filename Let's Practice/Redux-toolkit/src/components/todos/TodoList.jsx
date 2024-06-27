@@ -4,12 +4,12 @@ import { removeTodo } from '../../features/todoSlice'
 
 function TodoList() {
 
-    const todoLists = useSelector((state) => state.todos)
+    const todoList = useSelector((state) => state.todos)
     const dispatch = useDispatch()
 
     return (
         <div>
-            {todoLists.map((todo) => (
+            {todoList.map((todo) => (
                 <li key={todo._id}>
                     <input
                         type='text'

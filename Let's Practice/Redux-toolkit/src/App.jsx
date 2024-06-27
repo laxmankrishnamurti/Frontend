@@ -1,13 +1,8 @@
 import Header from './components/header/Header'
 import TodoInputForm from './components/input/TodoInputForm'
-import { useSelector } from 'react-redux'
 import TodoList from './components/todos/TodoList'
 
 function App() {
-
-  const todoList = useSelector(state => state.todos)
-  console.log("todoList : ", todoList)
-
 
   return (
     <>
