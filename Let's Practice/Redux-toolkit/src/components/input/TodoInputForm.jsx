@@ -9,15 +9,14 @@ function TodoInputForm() {
 
     const submitHandler = (e) => {
         e.preventDefault()
+
+        if (!input) return
+
         dispatch(addTodo(input))
         setInput("")
     }
 
     const todoList = useSelector((state) => state.todos)
-
-    useEffect(() => {
-        localStorage.setItem("todos", JSON.stringify(todoList))
-    }, [todoList])
 
     return (
         <>
