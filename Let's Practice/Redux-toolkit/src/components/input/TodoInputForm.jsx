@@ -27,6 +27,7 @@ function TodoInputForm() {
                 <input
                     className='border-2 border-black w-full rounded-tl-md rounded-bl-md px-2'
                     type='text'
+                    placeholder='Enter your todo........'
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                 />
