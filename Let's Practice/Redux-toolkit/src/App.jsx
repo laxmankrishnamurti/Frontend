@@ -2,11 +2,12 @@ import Header from './components/header/Header'
 import TodoInputForm from './components/input/TodoInputForm'
 import TodoList from './components/todos/TodoList'
 import { useSelector } from 'react-redux'
+import { updateTodo } from './features/todoSlice'
 
 function App() {
 
-  const todoList = useSelector((state) => state.todos)
-  console.log("todoList from App component : ", todoList)
+  const todoList = updateTodo()
+  console.log("todoList by updateTodo reducer : ", todoList)
 
   return (
     <>
