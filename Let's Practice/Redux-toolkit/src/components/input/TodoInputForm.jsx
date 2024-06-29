@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../../features/todoSlice'
 
@@ -12,6 +12,12 @@ function TodoInputForm() {
         dispatch(addTodo(input))
         setInput("")
     }
+
+    const todoList = useSelector((state) => state.todos)
+
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todoList))
+    }, [todoList])
 
     return (
         <>
