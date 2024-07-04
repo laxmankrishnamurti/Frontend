@@ -14,29 +14,29 @@
       "email": "laxmankrishnamurti@gmail.com",
       "address": "Kankarbagh, Patna-800020"
     },
-    "experience": {
-      "first": {
+    "experience": [
+      {
         "year": "2021-2022",
         "company_name": "Stock market",
         "company_location": "Mumbai",
         "job_title": "Trader",
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium velLorem ipsum dolor sit amet consectetur, adipisicing elit.  "
       },
-      "second": {
+      {
         "year": "2022-2023",
         "company_name": "Prashant advait foundation",
         "company_location": "New Delhi",
         "job_title": "Transcriber",
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci."
       },
-      "third": {
+      {
         "year": "2023-2024",
         "company_name": "Internet",
         "company_location": "World Wide Web",
         "job_title": "Software engineer",
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel."
       }
-    },
+    ],
     "education": {
       "first": {
         "year": "03-03-2019",
@@ -85,29 +85,29 @@
       "email": "laxmankrishnamurti@gmail.com",
       "address": "Kankarbagh, Patna-800020"
     },
-    "experience": {
-      "first": {
+    "experience": [
+      {
         "year": "2021-2022",
         "company_name": "Stock market",
         "company_location": "Mumbai",
         "job_title": "Trader",
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium velLorem ipsum dolor sit amet consectetur, adipisicing elit.  "
       },
-      "second": {
+      {
         "year": "2022-2023",
         "company_name": "Prashant advait foundation",
         "company_location": "New Delhi",
         "job_title": "Transcriber",
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci."
       },
-      "third": {
+      {
         "year": "2023-2024",
         "company_name": "Internet",
         "company_location": "World Wide Web",
         "job_title": "Software engineer",
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel."
       }
-    },
+    ],
     "education": {
       "first": {
         "year": "03-03-2019",

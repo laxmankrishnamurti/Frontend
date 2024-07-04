@@ -17,6 +17,7 @@ function LeftBox({ data }) {
                 <Education key="education" data={data} />
             </div>
             <div>
+                {/* Second assigment of chapter-3 is done  */}
                 {data.expertise.length > 0 && <Expertise key="expertise" data={data} />}
             </div>
         </div>

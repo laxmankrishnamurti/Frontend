@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Experience(props) {
+function Experience({ data }) {
 
-    const experienceData = props.data.experience;
+    const experienceData = data.experience;
 
     return (
         <div>
@@ -10,38 +10,44 @@ function Experience(props) {
             <hr className='border-black' />
 
             {/* Frist experience */}
-            <div>
-                <ul className='mt-4'>
-                    <li className='text-gray-600'>{experienceData.first.year}</li>
-                    <li className='mb-2 text-gray-500'><span>{experienceData.first.company_name}</span> / <span>{experienceData.first.company_location}</span></li>
-                    <li className='text-gray-600'><b>{experienceData.first.job_title}</b></li>
-                    <li className='text-sm text-gray-500'><p>{experienceData.first.work}</p></li>
-                </ul>
-            </div>
+
+            {experienceData.map((data, index) => (
+                <div key={`experience-div-${index}`} >
+                    <ul className='mt-4'>
+                        <li className='text-gray-600'>{data.year}</li>
+                        <li className='mb-2 text-gray-500'><span>{data.company_name}</span> / <span>{data.company_location}</span></li>
+                        <li className='text-gray-600'><b>{data.job_title}</b></li>
+                        <li className='text-sm text-gray-500'><p>{data.work}</p></li>
+                    </ul>
+                </div>
+            ))
+            }
+
+
 
             {/* Second Experience */}
 
-            <div>
+            {/* <div>
                 <ul className='mt-12'>
                     <li className='text-gray-600'>{experienceData.second.year}</li>
                     <li className='mb-2 text-gray-500'><span>{experienceData.second.company_name}</span> / <span>{experienceData.second.company_location}</span></li>
                     <li className='text-gray-600'><b>{experienceData.second.job_title}</b></li>
                     <li className='text-sm text-gray-500'><p>{experienceData.second.work}</p></li>
                 </ul>
-            </div>
+            </div> */}
 
             {/* Third Experience */}
 
-            <div>
+            {/* <div>
                 <ul className='mt-12'>
                     <li className='text-gray-600'>{experienceData.third.year}</li>
                     <li className='mb-2 text-gray-500'><span>{experienceData.third.company_name}</span> / <span>{experienceData.third.company_location}</span></li>
                     <li className='text-gray-600'><b>{experienceData.third.job_title}</b></li>
                     <li className='text-sm text-gray-500'><p>{experienceData.third.work}</p></li>
                 </ul>
-            </div>
+            </div> */}
 
-        </div>
+        </div >
     )
 }
 
