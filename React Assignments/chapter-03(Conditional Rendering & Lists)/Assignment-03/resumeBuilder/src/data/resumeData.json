@@ -9,11 +9,11 @@
       "position": "Software Engineer",
       "bio": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum Lorem ipsum ."
     },
-    "contact": {
-      "phone": "8252764932",
-      "email": "laxmankrishnamurti@gmail.com",
-      "address": "Kankarbagh, Patna-800020"
-    },
+    "contact": [
+      { "phone": "8252764932" },
+      { "email": "laxmankrishnamurti@gmail.com" },
+      { "address": "Kankarbagh, Patna-800020" }
+    ],
     "experience": [
       {
         "year": "2021-2022",
@@ -37,26 +37,26 @@
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel."
       }
     ],
-    "education": {
-      "first": {
+    "education": [
+      {
         "year": "03-03-2019",
         "degree": "10th (Matriculation)",
         "school_name": "+2 S.K.M.S High school, Teus",
         "status": "Pass-out"
       },
-      "second": {
+      {
         "year": "04-04-2021",
         "degree": "12th (Intermediate)",
         "school_name": "S.K.R college, Barbigha(Sheikhpura)",
         "status": "Pass-out"
       },
-      "third": {
+      {
         "year": "06-06-2023",
         "degree": "BCA",
         "school_name": "College of commerce arts & science, Patna",
         "status": "Drop-out"
       }
-    },
+    ],
     "expertise": [
       "HTML",
       "CSS",
@@ -74,17 +74,17 @@
     "id": 2,
     "personalDetails": {
       "username": {
-        "first_name": "Laxman",
-        "last_name": "Krishnamurti"
+        "first_name": "Sonu",
+        "last_name": "Kumar"
       },
       "position": "Software Engineer",
       "bio": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum Lorem ipsum ."
     },
-    "contact": {
-      "phone": "8252764932",
-      "email": "laxmankrishnamurti@gmail.com",
-      "address": "Kankarbagh, Patna-800020"
-    },
+    "contact": [
+      { "phone": "9508981101" },
+      { "email": "sonukumar@gmail.com" },
+      { "address": "Barbigha, Sheikhpura-811101" }
+    ],
     "experience": [
       {
         "year": "2021-2022",
@@ -108,26 +108,26 @@
         "work": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel."
       }
     ],
-    "education": {
-      "first": {
+    "education": [
+      {
         "year": "03-03-2019",
         "degree": "10th (Matriculation)",
         "school_name": "+2 S.K.M.S High school, Teus",
         "status": "Pass-out"
       },
-      "second": {
+      {
         "year": "04-04-2021",
         "degree": "12th (Intermediate)",
         "school_name": "S.K.R college, Barbigha(Sheikhpura)",
         "status": "Pass-out"
       },
-      "third": {
+      {
         "year": "06-06-2023",
         "degree": "BCA",
         "school_name": "College of commerce arts & science, Patna",
         "status": "Drop-out"
       }
-    },
+    ],
     "expertise": [],
     "language": ["Hindi", "English"]
   }
