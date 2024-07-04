@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './VideoList.css'
 
 function VIdeoList({ id, channelName, title, views, verified, uploadedOn, onPlay, onPause }) {
 
@@ -22,7 +23,7 @@ function VIdeoList({ id, channelName, title, views, verified, uploadedOn, onPlay
     return (
         <div
             onClick={handleParentClick}
-            className='w-1/5 border-2 h-72 cursor-pointer p-4 rounded-md'>
+            className='small-width w-1/5 border-2 h-72 cursor-pointer p-4 rounded-md'>
             <div>
                 <div className='w-full'>
                     <img src={`https://picsum.photos/id/${id}/160/90`} alt='thumbnail' className='w-full' />
