@@ -1,0 +1,1 @@
+## use an Input Textbox : after you enter some text. try to press ENTER button and show the an alert or console.log. You can capture the onKeyPress event, button how you will you make it work only for "Enter" ? It should not work on pressing of other keys. [Hint: Explore the synthetic event object ]
