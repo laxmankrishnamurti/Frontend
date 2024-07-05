@@ -1,0 +1,1 @@
+## Using event bubbling concept print the name of Parents to Child of any clicked element. It should be order in "GrandParent >Parent > Child" this kind of order. Where "Child" represents the current clicked element.
