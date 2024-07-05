@@ -1,0 +1,33 @@
+/* styles.css */
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .resume-container {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        page-break-after: always; /* Ensures each resume starts on a new page */
+    }
+
+    .resume-container * {
+        box-sizing: border-box;
+    }
+
+    .resume-container img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Remove unnecessary styles for print */
+    button {
+        display: none;
+    }
+
+    .bg-slate-200, .bg-slate-600 {
+        background-color: white !important; /* Ensure background colors do not print */
+    }
+}
