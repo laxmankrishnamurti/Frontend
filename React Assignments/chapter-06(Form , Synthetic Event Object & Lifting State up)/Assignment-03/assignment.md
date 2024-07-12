@@ -11,3 +11,5 @@ This is continuation of previous assignment RESUME Builder. Now you have to make
 - only Add functionality is required in this assignment
 
 - you can change input boxes according to your need depending on your format of Resume. You can have multiple textboxes also for same section. Like for date + experience item etc.
+
+Note :: To be more precise i have to add CRUD Functionality into the resume. That's it.

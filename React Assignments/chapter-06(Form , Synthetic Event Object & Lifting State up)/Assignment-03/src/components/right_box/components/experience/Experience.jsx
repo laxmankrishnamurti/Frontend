@@ -23,30 +23,6 @@ function Experience({ data }) {
             ))
             }
 
-
-
-            {/* Second Experience */}
-
-            {/* <div>
-                <ul className='mt-12'>
-                    <li className='text-gray-600'>{experienceData.second.year}</li>
-                    <li className='mb-2 text-gray-500'><span>{experienceData.second.company_name}</span> / <span>{experienceData.second.company_location}</span></li>
-                    <li className='text-gray-600'><b>{experienceData.second.job_title}</b></li>
-                    <li className='text-sm text-gray-500'><p>{experienceData.second.work}</p></li>
-                </ul>
-            </div> */}
-
-            {/* Third Experience */}
-
-            {/* <div>
-                <ul className='mt-12'>
-                    <li className='text-gray-600'>{experienceData.third.year}</li>
-                    <li className='mb-2 text-gray-500'><span>{experienceData.third.company_name}</span> / <span>{experienceData.third.company_location}</span></li>
-                    <li className='text-gray-600'><b>{experienceData.third.job_title}</b></li>
-                    <li className='text-sm text-gray-500'><p>{experienceData.third.work}</p></li>
-                </ul>
-            </div> */}
-
         </div >
     )
 }
