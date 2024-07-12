@@ -1,10 +1,21 @@
 import { useState } from 'react'
 import { Resume } from './components/index'
-import resumeData from './data/resumeData.json'
+import resumeData from './data/resumeData'
+import { useEffect } from 'react'
 
 function App() {
 
+  const [data, setData] = useState([])
   const [theme, setTheme] = useState('white')
+
+  useEffect(() => {
+    setData(resumeData)
+  }, [])
+
+  function updateContact(id, value) {
+    resumeData[0].contact.phone = value.phone
+    resumeData[0].contact.email = value.email
+  }
 
   function handleTheme() {
     if (theme == 'white') {
@@ -13,8 +24,6 @@ function App() {
       setTheme('white')
     }
   }
-
-  // {theme == "white" ? "🔆" : "🌑"}
 
   return (
     <>
@@ -26,8 +35,8 @@ function App() {
         </button>
         <div className='flex flex-col gap-8 justify-center items-center pt-4 w-3/5 mx-auto'>
           {
-            resumeData.map((data) => (
-              <Resume key={`resume-${data.id}`} data={data} />
+            data.map((rmData) => (
+              <Resume key={`resume-${data.id}`} data={rmData} updateContact={updateContact} />
             ))
           }
 

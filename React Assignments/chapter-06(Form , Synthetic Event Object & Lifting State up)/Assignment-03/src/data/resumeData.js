@@ -1,4 +1,4 @@
-[
+const resumeData = [
   {
     "id": 1,
     "personalDetails": {
@@ -9,11 +9,11 @@
       "position": "Software Engineer",
       "bio": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum enim consequatur eius placeat deserunt aspernatur rem adipisci, nemo quasi vero qui expedita alias suscipit accusantium vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum labore delectus quidem laborum Lorem ipsum ."
     },
-    "contact": [
-      { "phone": "8252764932" },
-      { "email": "laxmankrishnamurti@gmail.com" },
-      { "address": "Kankarbagh, Patna-800020" }
-    ],
+    "contact": {
+      "phone": "8252764932",
+      "email": "laxmankrishnamurti@gmail.com",
+      "address": "Kankarbagh, Patna-800020"
+    },
     "experience": [
       {
         "year": "2021-2022",
@@ -71,3 +71,5 @@
     "language": ["Hindi", "English"]
   }
 ]
+
+export default resumeData;
