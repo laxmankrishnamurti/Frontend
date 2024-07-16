@@ -1,38 +1,33 @@
 import React, { useState } from 'react'
 import './VideoList.css'
 
-function VIdeoList({ id, channelName, title, views, verified, uploadedOn, onPlay, onPause }) {
+function VIdeoList({ id, channelName, title, views, verified, uploadedOn, deleteVideo }) {
 
     const [play, setPlay] = useState(false)
 
     function handleClick(e) {
         e.stopPropagation()
         if (play) {
-            onPause()
             setPlay(false)
         } else {
-            onPlay()
             setPlay(true)
         }
     }
 
-    function handleParentClick() {
-        console.log("Parent clicked")
-    }
 
     return (
         <div
-            onClick={handleParentClick}
-            className='small-width w-1/5 border-2 h-72 cursor-pointer p-4 rounded-md'>
-            <div>
+            className='small-width w-2/5 border-2 h-72 cursor-pointer p-4 rounded-md'>
+            <div className='relative'>
+                <button
+                    onClick={(e) => deleteVideo(id)}
+                    className='bg-red-200 px-3 py-1 rounded-md absolute right-1 top-1'
+                > X </button>
                 <div className='w-full'>
                     <img src={`https://picsum.photos/id/${id}/160/90`} alt='thumbnail' className='w-full' />
                 </div>
                 <div className='flex mt-2 gap-2'>
-                    {/* ChannelThumbnail  */}
-                    <div className='w-8'>
-                        <img src={`https://picsum.photos/id/${id}/160/90`} className='w-full rounded-full' />
-                    </div>
+
                     {/* Video & channel info  */}
                     <div>
                         <h2 className='font-bold mb-1'>{title}</h2>
