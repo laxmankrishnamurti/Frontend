@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './VideoList.css'
 
-function VIdeoList({ id, channelName, title, views, verified, uploadedOn, deleteVideo }) {
+function VIdeoList({ id, channelName, title, views, verified, uploadedOn, deleteVideo, populateVideoId }) {
 
     const [play, setPlay] = useState(false)
 
@@ -16,9 +16,13 @@ function VIdeoList({ id, channelName, title, views, verified, uploadedOn, delete
 
 
     return (
-        <div className='small-width w-1/5 border-2 h-80 cursor-pointer p-4 rounded-md'>
+        <div className='small-width w-2/6 border-2 h-80 cursor-pointer p-4 rounded-md'>
 
             <div className='relative'>
+                <button
+                    onClick={(e) => populateVideoId(id)}
+                    className='bg-red-200 px-3 py-1 rounded-md absolute right-12 top-1'
+                > Edit </button>
                 <button
                     onClick={(e) => deleteVideo(id)}
                     className='bg-red-200 px-3 py-1 rounded-md absolute right-1 top-1'

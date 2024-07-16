@@ -1,20 +1,39 @@
 import React, { useState } from 'react'
 import { VideoList } from '../index'
 
-function Video({ videoData, deleteVideo, addVideo }) {
+function Video({ videoData, deleteVideo, addVideo, editVideo }) {
 
-    const [title, setTitle] = useState()
-    const [channelName, setChannelName] = useState()
+    const [title, setTitle] = useState('')
+    const [channelName, setChannelName] = useState('')
+    const [editMode, setEditMode] = useState(false)
+    const [editVideoId, setEditVideoId] = useState('')
 
-    function handleAddVideo(title, channelName) {
+    function handleAddAndEditVideo(title, channelName) {
+        if (editMode) {
+            editVideo(editVideoId, title, channelName)
+            setEditMode(false)
+            setTitle('')
+            setChannelName('')
+        } else {
 
-        if (title === '' && channelName === '') {
-            return window.alert("title and channelName is required")
+            if (title === undefined && channelName === undefined) {
+                return window.alert("title and channelName is required")
+            }
+
+            addVideo(title, channelName)
+            setTitle('')
+            setChannelName('')
         }
+    }
 
-        addVideo(title, channelName)
-        setTitle('')
-        setChannelName('')
+    function populateVideoData(id) {
+        setEditMode(true)
+        let editableVideoInfo = videoData.find((video) => {
+            return video.id === id
+        })
+        setTitle(editableVideoInfo.title)
+        setChannelName(editableVideoInfo.channelName)
+        setEditVideoId(id)
     }
 
 
@@ -37,9 +56,9 @@ function Video({ videoData, deleteVideo, addVideo }) {
                     className='border-black px-2 py-2 rounded-md border-2 block mb-2'
                 />
                 <button
-                    onClick={(e) => handleAddVideo(title, channelName)}
+                    onClick={(e) => handleAddAndEditVideo(title, channelName)}
                     className='bg-green-500 px-28 py-1 mt-2 rounded-md'
-                >Add</button>
+                >{editMode ? "Save" : "Add"}</button>
             </div>
             <div className='my-4 mx-auto w-4/5 flex justify-start flex-wrap gap-4 items-start'>
                 {videoData.map((data) => (
@@ -52,6 +71,7 @@ function Video({ videoData, deleteVideo, addVideo }) {
                         verified={data.verified}
                         uploadedOn={data.uploadedOn}
                         deleteVideo={deleteVideo}
+                        populateVideoId={populateVideoData}
                     />
                 ))}
             </div>

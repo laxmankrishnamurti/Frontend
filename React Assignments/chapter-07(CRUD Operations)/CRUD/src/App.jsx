@@ -25,9 +25,23 @@ function App() {
     setVideos([...videos, newVideo])
   }
 
+  function editVide(id, title, channelName) {
+    videos = videos.map((video) => {
+      if (video.id === id) {
+        video = {
+          ...video,
+          "channelName": `${channelName}`,
+          "title": `${title}`,
+        }
+      }
+      return video
+    })
+    setVideos(videos)
+  }
+
   return (
     <>
-      <Video videoData={videos} deleteVideo={deleteVideo} addVideo={addVideo} />
+      <Video videoData={videos} deleteVideo={deleteVideo} addVideo={addVideo} editVideo={editVide} />
     </>
   )
 }
