@@ -16,8 +16,8 @@ function VIdeoList({ id, channelName, title, views, verified, uploadedOn, delete
 
 
     return (
-        <div
-            className='small-width w-2/5 border-2 h-72 cursor-pointer p-4 rounded-md'>
+        <div className='small-width w-1/5 border-2 h-80 cursor-pointer p-4 rounded-md'>
+
             <div className='relative'>
                 <button
                     onClick={(e) => deleteVideo(id)}
