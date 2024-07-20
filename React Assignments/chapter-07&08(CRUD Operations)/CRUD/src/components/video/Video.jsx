@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { VideoList } from '../index'
 
-function Video({ videoData, deleteVideo, addVideo, editVideo }) {
+function Video({ videoData, dispatch }) {
 
     const [title, setTitle] = useState('')
     const [channelName, setChannelName] = useState('')
@@ -10,17 +10,30 @@ function Video({ videoData, deleteVideo, addVideo, editVideo }) {
 
     function handleAddAndEditVideo(title, channelName) {
         if (editMode) {
-            editVideo(editVideoId, title, channelName)
+            dispatch({
+                type: 'UPDATE',
+                payload: {
+                    id: editVideoId,
+                    title: title,
+                    channelName: channelName
+                }
+            })
             setEditMode(false)
             setTitle('')
             setChannelName('')
         } else {
 
-            if (title === undefined && channelName === undefined) {
+            if (title === '' && channelName === '') {
                 return window.alert("title and channelName is required")
             }
 
-            addVideo(title, channelName)
+            dispatch({
+                type: 'ADD',
+                payload: {
+                    title: title,
+                    channelName: channelName
+                }
+            })
             setTitle('')
             setChannelName('')
         }
@@ -70,7 +83,7 @@ function Video({ videoData, deleteVideo, addVideo, editVideo }) {
                         views={data.views}
                         verified={data.verified}
                         uploadedOn={data.uploadedOn}
-                        deleteVideo={deleteVideo}
+                        dispatch={dispatch}
                         populateVideoId={populateVideoData}
                     />
                 ))}
