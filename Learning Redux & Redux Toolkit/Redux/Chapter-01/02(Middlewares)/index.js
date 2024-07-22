@@ -1,4 +1,5 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
 
 const initialValue = {
   name: "Laxman Krishnamurti",
@@ -6,7 +7,9 @@ const initialValue = {
   age: 21,
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(logger.default));
+
+const history = [];
 
 function reducer(store = initialValue, action) {
   if (action.type === "incrementInAge") {
@@ -17,9 +20,6 @@ function reducer(store = initialValue, action) {
   return store;
 }
 
-store.dispatch({ type: "incrementInAge" });
-store.dispatch({ type: "decrementInClass" });
-
-store.dispatch({ type: "incrementInAge" });
-store.dispatch({ type: "decrementInClass" });
-console.log("store is :: ", store.getState());
+setInterval(() => {
+  store.dispatch({ type: "incrementInAge" });
+}, 1000);
