@@ -43,11 +43,13 @@ function handleClassDecrement(payload) {
 
 async function handleUsername() {
   const { data } = await axios.get("http://localhost:3000/accounts/");
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].email === String("laxmankrishnamurti@gmail.com")) {
-      store.dispatch({ type: updateUsername, payload: data[i].username });
-    }
-  }
+  // for (let i = 0; i < data.length; i++) {
+  //   if (data[i].email === String("laxmankrishnamurti@gmail.com")) {
+  //     store.dispatch({ type: updateUsername, payload: data[i].username });
+  //   }
+  // }
+  // return store.dispatch({ type: updateUsername, payload: data[0].username });
+  return { type: updateUsername, payload: data[0].username };
 }
 
 setInterval(() => {
@@ -57,5 +59,6 @@ setInterval(() => {
   // handleAgeIncrement();
   // handleClassDecrement(3);
   // handleUsername("Harshad Mehta");
-  handleUsername();
+  // handleUsername();
+  store.dispatch(handleUsername());
 }, 1000);
