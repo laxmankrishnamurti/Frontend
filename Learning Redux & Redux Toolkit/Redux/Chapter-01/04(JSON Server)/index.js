@@ -1,9 +1,10 @@
+import axios from "axios";
 import { createStore, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
 const initialValue = {
   _id: 1,
-  username: "Laxman Krishnamurti",
+  username: "Unknown",
   class: 12,
   age: 21,
 };
@@ -32,7 +33,7 @@ function reducer(store = initialValue, action) {
   }
 }
 
-function handleAgeIncrement(payload) {
+async function handleAgeIncrement(payload) {
   store.dispatch({ type: incrementInAge, payload: payload });
 }
 
@@ -40,16 +41,21 @@ function handleClassDecrement(payload) {
   store.dispatch({ type: decrementInClass, payload: payload });
 }
 
-function handleUsername(payload) {
-  store.dispatch({ type: updateUsername, payload: payload });
+async function handleUsername() {
+  const { data } = await axios.get("http://localhost:3000/accounts/");
+  for (let i = 0; i < data.length; i++) {
+    if (data[i].email === String("laxmankrishnamurti@gmail.com")) {
+      store.dispatch({ type: updateUsername, payload: data[i].username });
+    }
+  }
 }
 
 setInterval(() => {
   // store.dispatch({ type: decrementInClass });
   // store.dispatch({ type: updateUsername, payload: "Harshad" });
   // store.dispatch({ type: incrementInAge, payload: 2 });
-
-  // handleAgeIncrement(3);
+  // handleAgeIncrement();
   // handleClassDecrement(3);
-  handleUsername("Harshad Mehta");
+  // handleUsername("Harshad Mehta");
+  handleUsername();
 }, 1000);
