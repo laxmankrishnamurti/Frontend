@@ -1,0 +1,29 @@
+{
+  "accounts": [
+    {
+      "username": "Laxman Krishnamurti",
+      "age": 21,
+      "email": "laxmankrishnamurti@gmail.com"
+    },
+    {
+      "username": "Harshad Mehta",
+      "age": 23,
+      "email": "harshadmehta@gmail.com"
+    },
+    {
+      "username": "Sonu Kumar",
+      "age": 16,
+      "email": "sonukumar@gmail.com"
+    },
+    {
+      "username": "Vikram Dhanush",
+      "age": 13,
+      "email": "vikramdhanush@gmail.com"
+    },
+    {
+      "username": "Kawya Krishnamurti",
+      "age": 6,
+      "email": "kawyakrishnamurti@gmail.com"
+    }
+  ]
+}
