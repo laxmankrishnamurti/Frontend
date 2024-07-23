@@ -42,11 +42,24 @@ function handleClassDecrement(payload) {
   store.dispatch({ type: decrementInClass, payload: payload });
 }
 
-async function handleUsername(dispatch, getState) {
-  const { data } = await axios.get("http://localhost:3000/accounts/");
-  dispatch({ type: updateUsername, payload: data[0].username });
+// async function handleUsername(dispatch, getState) {
+//   const { data } = await axios.get("http://localhost:3000/accounts/");
+//   dispatch({ type: updateUsername, payload: data[0].username });
+// }
+
+function handleUsername(id) {
+  return async (dispatch, getState) => {
+    console.log("id :: ", id);
+    const { data } = await axios.get(`http://localhost:3000/accounts/${id}`);
+    console.log("data :: ", data);
+    dispatch(initUser(data.username));
+  };
 }
 
-setInterval(() => {
-  store.dispatch(handleUsername);
-}, 5000);
+function initUser(value) {
+  return { type: updateUsername, payload: value };
+}
+
+setTimeout(() => {
+  store.dispatch(handleUsername("d839"));
+}, 2000);
