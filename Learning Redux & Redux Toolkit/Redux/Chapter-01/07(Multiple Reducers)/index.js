@@ -1,76 +1,66 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import logger from "redux-logger";
-import { thunk } from "redux-thunk";
-import axios from "axios";
 
-const initialState = {
-  id: 1,
-  username: "Laxman Krishnamurti",
-  email: "laxmankrishnamurti@gmail.com",
-  age: 21,
-};
+const initialAccountValue = { amount: 1000 };
+const initialBonusPoint = { points: 0 };
 
-const getAccUserPending = "accoutn/getUser/Pending";
-const getAccUserFulFilled = "accoutn/getUser/FulFilled";
-const getAccUserRejected = "accoutn/getUser/Rejected";
+const incAmount = "amount/increase";
+const incAmountByValue = "amount/increaseByValue";
 
-const store = createStore(userReducer, applyMiddleware(logger.default, thunk));
+const incBonus = "bonus/increase";
 
-function userReducer(state = initialState, action) {
+const store = createStore(
+  combineReducers({
+    account: accountReducer,
+    bonus: bonusReducer,
+  }),
+  applyMiddleware(logger.default)
+);
+
+function accountReducer(state = initialAccountValue, action) {
   switch (action.type) {
-    case getAccUserPending:
-      return { ...state, pending: true };
+    case incAmount:
+      return { ...state, amount: state.amount + state.amount * 0.07 };
 
-    case getAccUserFulFilled:
-      return {
-        ...state,
-        id: action.payload.id,
-        username: action.payload.username,
-        age: action.payload.age,
-        email: action.payload.email,
-        pending: false,
-      };
-
-    case getAccUserRejected:
-      return { ...state, pending: false, error: action.error };
+    case incAmountByValue:
+      return { ...state, amount: state.amount + action.payload };
 
     default:
       return state;
   }
 }
 
-function getUserAccount(id) {
-  return async (dispatch, getState) => {
-    try {
-      dispatch(getUserAccountPending());
-      const { data } = await axios.get(`http://localhost:3000/accounts/${id}`);
-      dispatch(getUserAccountFulFilled(data));
-    } catch (error) {
-      getUserAccountRejected(error.message);
-    }
-  };
+function bonusReducer(state = initialBonusPoint, action) {
+  switch (action.type) {
+    case incBonus:
+      return { ...state, points: state.points + 1 };
+
+    case incAmountByValue:
+      if (action.payload >= 500) {
+        return { ...state, points: state.points + 5 };
+      } else {
+        return { ...state, points: state.points + 2 };
+      }
+
+    default:
+      return state;
+  }
 }
 
-function getUserAccountPending() {
-  return { type: getAccUserPending };
+function handleAmount() {
+  return { type: incAmount };
 }
 
-function getUserAccountFulFilled(data) {
-  return {
-    type: getAccUserFulFilled,
-    payload: {
-      id: data.id,
-      username: data.username,
-      email: data.email,
-      age: data.age,
-    },
-  };
+function handleAmountByValue(payload) {
+  return { type: incAmountByValue, payload: payload };
 }
 
-function getUserAccountRejected(error) {
-  return { type: getAccUserRejected, error: error };
+function handleBonus() {
+  return { type: incBonus };
 }
 
 setTimeout(() => {
-  store.dispatch(getUserAccount("37a4"));
+  // store.dispatch(handleAmount());
+  // store.dispatch(handleBonus());
+  store.dispatch(handleAmountByValue(600));
 }, 2000);
