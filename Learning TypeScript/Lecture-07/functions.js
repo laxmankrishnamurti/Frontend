@@ -17,6 +17,13 @@ function signIn(name, email, isPaid) {
 }
 var result = signIn("Laxman Krishnamurti", "laxmankrishnamurti@gmail.com", false);
 console.log("result :: ", result);
+//Default Parameters
+function addTwoNumbers(num1, num2) {
+    if (num2 === void 0) { num2 = 1; }
+    return num1 + num2;
+}
+var resultOfAddTwoNumbers = addTwoNumbers(4);
+console.log("resultOfAddTwoNumbers : ", resultOfAddTwoNumbers);
 //Taking number type but returning a string value
 function getMultiple(num) {
     return "Completed";

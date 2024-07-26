@@ -27,6 +27,15 @@ const result = signIn(
 );
 console.log("result :: ", result);
 
+//Default Parameters
+
+function addTwoNumbers(num1: number, num2: number = 1) {
+  return num1 + num2;
+}
+
+const resultOfAddTwoNumbers = addTwoNumbers(4);
+console.log("resultOfAddTwoNumbers : ", resultOfAddTwoNumbers);
+
 //Taking number type but returning a string value
 
 function getMultiple(num) {
