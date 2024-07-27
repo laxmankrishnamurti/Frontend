@@ -1,3 +1,5 @@
-# What TypeScript does?
+# Lecture-02
+
+## What TypeScript does?
 
 Static Checking

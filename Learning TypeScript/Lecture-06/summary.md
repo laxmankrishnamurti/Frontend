@@ -1,3 +1,5 @@
+# Lecture-06
+
 ## any - keyword
 
 - We should avoid to use any-keyword as much as possible. Because, it turns off the type checking of that particular variable. So, if like that why we are using TypeScript!.
