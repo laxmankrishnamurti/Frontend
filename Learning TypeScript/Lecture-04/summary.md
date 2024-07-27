@@ -1,3 +1,5 @@
+# Lecture-04
+
 ## Type's in TypeScript?
 
 There are lots of types are available in TypeSript. List of some types which is given below:-

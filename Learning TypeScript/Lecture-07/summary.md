@@ -1,3 +1,5 @@
+# Lecture-07
+
 ## Functions
 
 Nothing too much just simply focus on assigning types of the parameter so that no value have any type.

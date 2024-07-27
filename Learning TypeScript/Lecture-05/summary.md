@@ -1,3 +1,5 @@
+# Lecture-05
+
 ## number & boolean
 
 - Type Inference :: Actually, we don't need to write variable type number, boolean again & again if we are initialize it's value on declaration time. TypeScript is enough smart to detected the type of the variable, doing this can be overwhelming.
