@@ -41,4 +41,22 @@ function returnUser() {
     };
     return user;
 }
-console.log("returnedUser value is :: ", returnUser());
+console.log("returnedUser value is :: ", returnUser()); //returnedUser value is ::  { name: 'Sonu Kumar', age: 17, email: 'sonukumar@gmail.com' }
+//It means it can return an object with extra key-value pairs that is not defined in the object type. It obvious that it can prevent me to pass any other value except an object. But think about the scenario where we are padding an object with extra values that is not defined in their type.
+function handleInputUser(_a) {
+    var string = _a.name, number = _a.age;
+}
+// handleInputUser({
+//   name: "Kawya Krishnamurti",
+//   age: 6,
+//   email: "kawyakrishnamurti@gmail.com",
+// });
+//Error : Object literal may not specify known properties, and email does not exist in the type
+//But let me show you something
+var userInfo = {
+    name: "Kawya Krishnamurti",
+    age: 6,
+    email: "kawyakrishnamurti@gmail.com",
+};
+//let me pass the userInfo into the handleInputUser function
+handleInputUser(userInfo);
