@@ -1,13 +1,18 @@
-import { Header, InputForm, TodoList } from "./components/index";
+import { Header, InputForm, TodoList, Footer } from "./components/index";
+import useTodo from "./Context/TodoContext";
+import { TodoContext } from "./Context/TodoContext";
 
 function App() {
+  const vlaue = useTodo();
+  console.log("Value is : ", vlaue);
+
   return (
     <>
-      <div>
+      <TodoContext.Provider vlaue={{ todos }}>
         <Header />
         <InputForm />
-        <TodoList />
-      </div>
+        <Footer />
+      </TodoContext.Provider>
     </>
   );
 }
