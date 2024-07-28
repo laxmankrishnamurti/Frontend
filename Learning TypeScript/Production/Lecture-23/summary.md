@@ -42,3 +42,5 @@ class YouTube implements Takephoto, Story {
 ```
 
 The class that uses a interface must pass the require parameters. It can pass more parameters but not less as it has required to use that interface protocol.
+
+- <code>implements - Keyword</code> : Used by class if it wants to use an interface(Guidlines/Protocols)
