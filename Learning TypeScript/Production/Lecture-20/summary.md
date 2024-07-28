@@ -4,7 +4,12 @@
 
 - <code>private</code> :: sets properties as private that is only accessable by the Class itself.
 
+  - Note :: There is no <code>private</code> keyword is available in JavaScript world. Instead of this there will be a <code>#</code> symbol that is used to mark a property as private.
+
 ```TypeScript
+
+//Short-cut way to create classes in TypeScript
+
 class User {
   private static instanceCount = 0;
   readonly country = "India";
