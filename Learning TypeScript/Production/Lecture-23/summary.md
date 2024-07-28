@@ -2,6 +2,10 @@
 
 - <code>interface</code> : Just for understanding purpose, we can call it as a protocol. So, if there is class that is trying to use that interface, it must should adhere interface protocol.
 
+Or Like a Guidline
+
+TypeScript - Purpose :: Getting less error having more consistency in the JavaScript.
+
 ```TypeScript
 
 interface Takephoto {
