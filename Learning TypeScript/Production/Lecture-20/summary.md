@@ -2,7 +2,7 @@
 
 - <code>public</code> :: sets properties as public that is accessable by the object
 
-- <code>private</code> :: sets properties as private that is only accessable by the Class itself.
+- <code>private</code> :: sets properties as private that is only accessable by the Class itself. We cannot access it outside of the class.
 
   - Note :: There is no <code>private</code> keyword is available in JavaScript world. Instead of this there will be a <code>#</code> symbol that is used to mark a property as private.
 
