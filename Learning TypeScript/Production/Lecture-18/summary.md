@@ -33,3 +33,5 @@ cd src
 tsc -w
 
 ```
+
+By running this command it will keep watching all TypeScript file that is in the <code>src</code> directory and it will compile the code into JavaScript and stored it into the output path location as we set into the tsconfig.json file.
