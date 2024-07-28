@@ -3,60 +3,73 @@ import { Header, InputForm, TodoList, Footer } from "./components/index";
 import { TodoProvider, useTodo } from "./Context/index.context";
 
 function App() {
-  let [todos, setTodos] = useState([]);
+  // let [todos, setTodos] = useState([]);
 
-  const [todo, dispatch] = useReducer(todoReducer, todos);
+  const [todoList, dispatch] = useReducer(todoReducer, []);
 
-  function addTodo(todo) {
-    setTodos((prevTodo) => [{ ...todo }, ...prevTodo]);
-    //short syntax
-    setTodos([{ ...todo }, ...todos]);
-  }
+  function todoReducer(todoList, action) {
+    switch (action.type) {
+      case "ADD":
+        return [{ ...action.payload }, ...todoList];
 
-  function updateTodo(id, message) {
-    todos = todos.map((todo) =>
-      todo._id === id ? { ...todo, todoMessage: message } : todo
-    );
-    setTodos(todos);
-  }
+      case "DELETE":
+        todoList = todoList.filter((todo) => todo._id !== payload);
+        return todoList;
 
-  function deleteTodo(id) {
-    todos = todos.filter((todo) => todo._id !== id);
-    setTodos(todos);
-  }
+      case "UPDATE":
+        todoList = todoList.map((todo) =>
+          todo._id === payload.id
+            ? { ...todo, todoMessage: payload.updatedMessage }
+            : todo
+        );
+        return todoList;
 
-  function completeTodo(id) {
-    setTodos((prevTodo) =>
-      prevTodo.map((todoList) =>
-        todoList._id === id
-          ? { ...todoList, completed: !todoList.completed }
-          : todoList
-      )
-    );
-  }
-
-  useEffect(() => {
-    const getTodoFromLocalStorage = JSON.parse(localStorage.getItem("todos"));
-
-    if (getTodoFromLocalStorage && getTodoFromLocalStorage.length > 0) {
-      setTodos(getTodoFromLocalStorage);
+      case "COMPLETED":
+        todoList = todoList.map((todo) =>
+          todo._id === payload ? { ...todo, completed: !todo.completed } : todo
+        );
     }
-  }, []);
+  }
 
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+  function addTodo(message) {
+    dispatch({
+      type: "ADD",
+      payload: {
+        _id: Date.now(),
+        todoMessage: message,
+        completed: false,
+      },
+    });
+  }
+
+  function updateTodo(id, message) {}
+
+  function deleteTodo(id) {}
+
+  function completeTodo(id) {}
+
+  // useEffect(() => {
+  //   const getTodoFromLocalStorage = JSON.parse(localStorage.getItem("todos"));
+
+  //   if (getTodoFromLocalStorage && getTodoFromLocalStorage.length > 0) {
+  //     setTodos(getTodoFromLocalStorage);
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   localStorage.setItem("todos", JSON.stringify(todos));
+  // }, [todos]);
 
   return (
     <>
       <TodoProvider
-        value={{ todos, addTodo, updateTodo, deleteTodo, completeTodo }}
+        value={{ todoList, addTodo, updateTodo, deleteTodo, completeTodo }}
       >
         <Header />
-        <InputForm />
+        <InputForm dispatch={dispatch} />
         <Footer />
-        {todos.map((todo) => (
-          <TodoList key={todo._id} todo={todo} />
+        {todoList.map((todo) => (
+          <TodoList key={todo._id} todo={todo} dispatch={dispatch} />
         ))}
       </TodoProvider>
     </>

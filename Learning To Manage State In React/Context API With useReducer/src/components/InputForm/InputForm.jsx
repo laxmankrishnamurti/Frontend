@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTodo } from "../../Context/TodoContext";
 
-function InputForm() {
+function InputForm({ dispatch }) {
   const [inputTodo, setInputTodo] = useState("");
 
   const { addTodo } = useTodo();

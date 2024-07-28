@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useTodo } from "../../Context/TodoContext";
 
-function TodoList({ todo }) {
+function TodoList({ todo, dispatch }) {
   const [inputValue, setInputValue] = useState(todo.todoMessage);
   const [isEditable, setIsEditable] = useState(false);
 
