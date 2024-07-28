@@ -11,10 +11,8 @@ function InputForm({ dispatch }) {
 
     if (!inputTodo) return;
 
-    addTodo({
-      _id: Date.now(),
-      todoMessage: inputTodo,
-      completed: false,
+    dispatch({
+      type: "ADD",
     });
 
     setInputTodo("");
