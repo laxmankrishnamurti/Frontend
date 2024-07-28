@@ -8,7 +8,7 @@ function App() {
   function addTodo(todo) {
     setTodos((prevTodo) => [{ ...todo }, ...prevTodo]);
     //short syntax
-    setTodos([{ ...todo }, ...todos]);
+    // setTodos([{ ...todo }, ...todos]);
   }
 
   function updateTodo(id, message) {

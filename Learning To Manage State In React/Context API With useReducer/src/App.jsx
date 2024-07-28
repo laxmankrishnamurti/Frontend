@@ -1,9 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState, useReducer } from "react";
 import { Header, InputForm, TodoList, Footer } from "./components/index";
 import { TodoProvider, useTodo } from "./Context/index.context";
 
 function App() {
   let [todos, setTodos] = useState([]);
+
+  const [todo, dispatch] = useReducer(todoReducer, todos);
 
   function addTodo(todo) {
     setTodos((prevTodo) => [{ ...todo }, ...prevTodo]);
