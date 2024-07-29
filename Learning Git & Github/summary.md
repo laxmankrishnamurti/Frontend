@@ -201,3 +201,15 @@ git diff commit_hash_one..commit_hash_two
 ```
 
 - <code>Git Stash</code> :: Stash is a way to save changes in a temporary location. It is useful when we want to make changes to a file but don't want to commit them yet.
+
+Store Temporary work like a stck memeory
+
+```javascript
+git stash
+```
+
+Get all stash list
+
+```javascript
+git stash list
+```
