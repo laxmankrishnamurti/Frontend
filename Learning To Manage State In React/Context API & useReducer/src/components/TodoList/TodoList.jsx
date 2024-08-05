@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function TodoList({ todo, handleDeleteTodo, handleComplete }) {
+function TodoList({ todo, handleDeleteTodo, handleComplete, handleEditTodo }) {
 
   const [todoValue, setTodoValue] = useState("")
   const [isChecked, setIsChecked] = useState(false)
@@ -8,7 +8,7 @@ function TodoList({ todo, handleDeleteTodo, handleComplete }) {
 
   function handleEdit() {
     setIsEditable((prev) => !prev)
-    console.log(isEditable)
+    handleEditTodo(todo._id, todoValue)
   }
 
   useEffect(() => {
@@ -33,6 +33,7 @@ function TodoList({ todo, handleDeleteTodo, handleComplete }) {
             type="text"
             value={todoValue}
             onChange={(e) => setTodoValue(e.target.value)}
+            disabled={!isEditable}
             className={`${isChecked ? "line-through" : null} w-full px-2 py-2 rounded-md`}
           />
         </div>
@@ -40,7 +41,9 @@ function TodoList({ todo, handleDeleteTodo, handleComplete }) {
           <button
             onClick={handleEdit}
             disabled={isChecked}
-            className={`${isChecked ? "bg-gray-400" : null} bg-yellow-200 px-8 py-2 rounded-md`}>Edit</button>
+            className={`${isChecked ? "bg-gray-400" : null} bg-yellow-200 px-8 py-2 rounded-md`}>
+            {isEditable ? "Save" : "Edit"}
+          </button>
 
         </div>
         <div>
