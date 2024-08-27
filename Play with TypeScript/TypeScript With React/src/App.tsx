@@ -1,33 +1,46 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Product from './components/Product';
 import './App.css'
 
+export interface IProduct {
+  _id: number;
+  name: string;
+  price: number;
+  category: string;
+}
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [products, setProducts] = useState<IProduct[]>([
+    {
+      _id: 1,
+      name: "Lenovo ideapad slim-3",
+      price: 24500,
+      category: "Laptop"
+    },
+    {
+      _id: 2,
+      name: "Ryzen 3 Processor",
+      price: 38000,
+      category: "PC"
+    },
+    {
+      _id: 3,
+      name: "Oppo-K10",
+      price: 18000,
+      category: "Smart Phone"
+    }
+  ])
+
+  function handleAddToCart(id:number){
+    console.log("Product id is : ", id)
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {
+        products.map((product) => <Product products={product} handleAddToCart={handleAddToCart} key={product._id}/>)
+      }
     </>
   )
 }
