@@ -58,4 +58,13 @@ var oldPlayerInfo = getOldAge(players);
 console.log("Old age player info : ", oldPlayerInfo.age); // age : 21
 // SOLUTION :: ASSERTION (Define explicitly that the returning object should have Player intterface type.)
 var playerInfo = getOldAge(players);
-console.log("Old player info : ", playerInfo);
+console.log("Old player info : ", playerInfo); // { name: 'Laxman Krishnamurti', age: 21 }
+// Note :- Explicit type definition is not a good practice. So, does there any way to solve it without Assertion? YES -> GENERICS.
+/**
+ * GENERICS
+ */
+function getOldAgeInfo(arg) {
+    return arg.sort(function (a, b) { return (b.age - a.age); })[0];
+}
+var oldPlayer = getOldAgeInfo(players);
+console.log("oldPlayer : ", oldPlayer);

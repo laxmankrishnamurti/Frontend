@@ -94,4 +94,89 @@ console.log("Old age player info : ", oldPlayerInfo.age) // age : 21
 const playerInfo = getOldAge(players) as Player
 console.log("Old player info : ", playerInfo) // { name: 'Laxman Krishnamurti', age: 21 }
 
-// Note :- Explicit type definition is not a good practice. So, does there any way to solve it without Assertion? YES -> GENERICS.
+// Note :- Explicit type definition is not a good practice (Double type declaration -> Type definition on a Type). So, does there any way to solve it without Assertion? YES -> GENERICS.
+
+/**
+ * GENERICS 
+ */
+
+function getOldAgeInfo<T extends HasAge>(arg: T[]): T{
+    return arg.sort((a,b) => (b.age - a.age))[0];
+}   
+
+const oldPlayer = getOldAgeInfo(players)
+console.log("oldPlayer : ", oldPlayer) // soldPlayer :  { name: 'Laxman Krishnamurti', age: 21 }
+
+/**
+ * REAL WORLD PROJECT EXAMPLE   :: On frontend we create lots of function to make a server request to fetch data. Lets create a generic function that can used as a Utility function to make a server request.
+ */
+
+interface IPost {
+    title: string;
+    id: number;
+    description: string;
+}
+
+const fetchPostData = async (path: string): Promise<IPost[]> => {
+    const response = await fetch(`https://domain.com${path}`)
+    return response.json();
+}
+
+(
+    async () => {
+        const post = await fetchPostData('/posts')
+        console.log(post)
+        console.log(post[0].description)
+        console.log(post[0].id)
+        console.log(post[0].title)
+    }
+)();
+
+interface IUser {
+    id: number;
+    name: string;
+    age: number;
+}
+
+const fetchUserData = async (path: string): Promise<IUser[]> => {
+    const response = await fetch(`https://domain.com${path}`)
+    return response.json();
+}
+
+(
+    async () => {
+        const users = await fetchPostData('/users')
+        console.log(users)
+        console.log(users[0].id)
+        console.log(users[0].title)
+        console.log(users[0].description)
+    }
+)();
+
+// PROBLEM :: REDUNDENCY (TOO MUCH REPETATION)
+// SOLUTION :: INTRODUCING GENERCIS
+
+const fetchData = async <ResultType>(path: string): Promise<ResultType> => {
+    const response = await fetch(`https://domain.com${path}`)
+    return response.json()
+}
+
+(
+    async () => {
+        const posts = await fetchData<IPost[]>('/posts')
+        console.log(posts[0].description)
+        console.log(posts[0].id)
+        console.log(posts[0].title)
+    }
+)();
+
+(
+    async () => {
+        const posts = await fetchData<IUser[]>('/posts')
+        console.log(posts[0].age)
+        console.log(posts[0].id)
+        console.log(posts[0].name)
+    }
+)();
+
+// This is the concept that is used heavily in React Applications.
