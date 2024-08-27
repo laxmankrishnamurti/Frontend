@@ -75,3 +75,89 @@ URL Segments, layouts, and data are more often than not coupled(sync) together. 
 There are two APIs which we can use to load data, <code>loader</code> and <code>useLoaderData.</code> First we should create and export a loader function in the root route module, then we will hook it up to the route. Finally we'll access and render the data.
 
 #### Reference :: Learning React -> Class-12(React Router Dom)
+
+## Steps to implement React-Router-Dom
+
+- Install react-router-dom
+- Import all necessary components from react-router-dom
+- Create a Root layout
+- Make an outlet place to render children components and for nesting routing.
+- Make changes in the <code>main.jsx</code> file to apply react-router-dom for client side routing.
+- If needed, use <code>loader</code> to get data into a component so that component can synchronize.
+
+<code>This is the basics of react-router-dom to implement client-side routing and nested routing in our application. Explore more about react-router-dom</code>
+
+```jsx
+// Fomat - 01
+
+import {
+  RouterProvider,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Root from "./Root.jsx";
+import Home from "./components/Home/Home.jsx";
+import About from "./components/About/About.jsx";
+import Github, { githubInfoLoader } from "./components/Github/Github.jsx";
+import User from "./components/User/User.jsx";
+
+//Note :- Root component acts a very crutial role into the route system. It allows to render it's child route into it like a nesting routing. It acts like a Root layout of our application.
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="profile" element={<Github />} loader={githubInfoLoader} />
+      <Route path="user/:name" element={<User />} />
+    </Route>
+  )
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
+```jsx
+// Format-02
+
+import Root, {
+  loader as rootLoader,
+  action as rootAction,
+} from "./routes/Root.jsx";
+import ErrorPage from "./ErrorPage.jsx";
+import Contact from "./routes/Contact.jsx";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    loader: rootLoader,
+    action: rootAction,
+    children: [
+      {
+        path: "contacts/:contactId",
+        element: <Contact />,
+      },
+      {
+        now: "add multile children and its corresponding elements or components and implement loaders to synchronize the component to better user experience.",
+      },
+    ],
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
+[Visit its official website](https://reactrouter.com/en/main)
