@@ -73,3 +73,5 @@ import { Outlet } from "react-router-dom";
 URL Segments, layouts, and data are more often than not coupled(sync) together. To Synchronize all of them, React Router has data conventions to get data into the route component easily.
 
 There are two APIs which we can use to load data, <code>loader</code> and <code>useLoaderData.</code> First we should create and export a loader function in the root route module, then we will hook it up to the route. Finally we'll access and render the data.
+
+#### Reference :: Learning React -> Class-12(React Router Dom)
