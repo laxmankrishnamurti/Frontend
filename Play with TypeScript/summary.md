@@ -22,5 +22,3 @@ $ npm install -g typescript
 $ tsc --help
 $ tsc --version
 ```
-
-Makingvj
