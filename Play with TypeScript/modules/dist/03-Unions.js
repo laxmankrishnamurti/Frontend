@@ -1,3 +1,4 @@
+"use strict";
 // We would prefer to use unions in such scenarios where we have "OR" case. We have two options to choose either go with this one or that one. 
 function printId(id) {
     console.log("id : ", id);
@@ -21,3 +22,8 @@ function generateId(id) {
     }
 }
 generateId("Kawya Krishnamurti");
+function getFirstThree(x) {
+    console.log(x.slice(0, 3));
+}
+getFirstThree("Laxman"); //Output : Lax
+getFirstThree([1, 2, 3, 4, 5, 6, 7, 8, 9]); //Output : [1,2,3]

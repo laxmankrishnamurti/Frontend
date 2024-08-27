@@ -30,3 +30,5 @@ $ tsc --version
 ```bash
 $ tsc <file_name>
 ```
+
+<code>tsc :: Compile the current project</code>
