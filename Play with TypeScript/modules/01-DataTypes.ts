@@ -28,3 +28,9 @@ function login(userData: User):User {
 }
 
 console.log(login(user))
+
+// variables
+
+type ID = number;
+
+const user_id: ID = 3546873545;
