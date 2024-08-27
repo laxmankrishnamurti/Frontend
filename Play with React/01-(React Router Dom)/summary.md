@@ -88,42 +88,7 @@ There are two APIs which we can use to load data, <code>loader</code> and <code>
 <code>This is the basics of react-router-dom to implement client-side routing and nested routing in our application. Explore more about react-router-dom</code>
 
 ```jsx
-// Fomat - 01
-
-import {
-  RouterProvider,
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from "react-router-dom";
-import Root from "./Root.jsx";
-import Home from "./components/Home/Home.jsx";
-import About from "./components/About/About.jsx";
-import Github, { githubInfoLoader } from "./components/Github/Github.jsx";
-import User from "./components/User/User.jsx";
-
-//Note :- Root component acts a very crutial role into the route system. It allows to render it's child route into it like a nesting routing. It acts like a Root layout of our application.
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path="/" element={<Root />}>
-      <Route path="/" element={<Home />} />
-      <Route path="about" element={<About />} />
-      <Route path="profile" element={<Github />} loader={githubInfoLoader} />
-      <Route path="user/:name" element={<User />} />
-    </Route>
-  )
-);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
-```
-
-```jsx
-// Format-02
+// Format-01
 
 import Root, {
   loader as rootLoader,
@@ -152,6 +117,41 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
+```jsx
+// Fomat - 02 (Optimized way to handle routes)
+
+import {
+  RouterProvider,
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Root from "./Root.jsx";
+import Home from "./components/Home/Home.jsx";
+import About from "./components/About/About.jsx";
+import Github, { githubInfoLoader } from "./components/Github/Github.jsx";
+import User from "./components/User/User.jsx";
+
+//Note :- Root component acts a very crutial role into the route system. It allows to render it's child route into it like a nesting routing. It acts like a Root layout of our application.
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="profile" element={<Github />} loader={githubInfoLoader} />
+      <Route path="user/:name" element={<User />} />
+    </Route>
+  )
+);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
