@@ -17,8 +17,25 @@
     .btn {
         @apply px-8 py-2 bg-orange-500 hover:bg-orange-400/10 rounded-sm outline-none border-none
     }
-    
-    input {
-        @apply border-blue-400 px-2 py-1 font-bold text-sm rounded-md outline-none
+
+    /* To apply same css on every input field to make it simple */
+
+    input, select {
+        @apply border-blue-400 px-1 py-1 mb-2 font-bold text-sm rounded-md outline-none disabled:bg-gray-400
     }
+
+    /* Seperation css for different input type */
+
+    input[type="text"] {
+        @apply border-blue-400 px-1 py-1 mb-2 font-bold text-sm rounded-md outline-none disabled:bg-gray-400
+    }
+
+    input[type="date"] {
+        @apply border-blue-400 px-1 py-1 mb-2 font-bold text-sm rounded-md outline-none disabled:bg-gray-400
+    }
+
+    input[type="checkbox"]{
+        @apply checked:bg-orange-300 checked:border checked:border-white mt-1 ml-4 
+    }
+
 }
