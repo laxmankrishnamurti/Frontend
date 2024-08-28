@@ -133,4 +133,4 @@ Let say we picked up a primary color for our project but the question is how do 
      - It Provides Live UI Kit Demo
 
    - [Web Gradients for getting gradient colors](https://www.webgradients.com)
-   - [Dribble for design that matches with the color](dribbble.comhttps://www.)
+   - [Dribble for design that matches with the color](https://www.dribbble.com)
