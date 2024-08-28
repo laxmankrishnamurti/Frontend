@@ -9,6 +9,8 @@ Typography starts from choosing a font-type or font-family for our website. Let 
 
 <code>Readability should be heigher. Using more fonts in our website may impact on website performance.</code>
 
+<code>Modern fonts -> san serif</code>
+
 # Font Attributes and Roles
 
 After choosing the font we need to decide what should be the attribute and its roles are going to be. It means which font we should use in Headings, for a normal paragraphs, for buttons, and so on.
@@ -18,7 +20,7 @@ Attributes mean -> Letter-spacing, Font-Size, weight, line-height, .......so on.
 <code>Single Typefaces -> All the elements will be using fonts from the family so settings role is easy.</code>
 <code>Multiple Typefaces -> Trickier. Use the font with the best readability for smaller elements.</code>
 
-SOLUTION OF ATTRIBUTES :: Type Scales
+SOLUTION OF ATTRIBUTES :: [Type Scales](https://type-scale.com)
 
 # KEY TAKEAWAYS
 
@@ -29,3 +31,9 @@ SOLUTION OF ATTRIBUTES :: Type Scales
    - Fonts should also be picked using criteria like readability and loading time.
 
 2. After picked our fonts, we need to set proper roles and attributes.
+
+3. Start Typography process by defining the "type scale", "font weight", and "Line-height".
+
+4. Use tools like <code>Type Scale</code> <code>ArcheType</code> to make this task easier.
+
+5. If our design app allows it, create text styles for elements like heading and paragraphs.
