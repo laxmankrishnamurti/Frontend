@@ -37,7 +37,7 @@ Picking a good designing tool is a very important decision for any Web Designer.
 
 - Adobe XD
 - Figma
-- Sketch
+- Sketch (As of now, it is only for mac OS.)
 - Envision studio
   ---------------n
 
