@@ -2,7 +2,7 @@
 
 Web design is a vast topic and as a developer we don't need to know much about it. However we must have a good understanding about what exactly the Web designing is. It can increase our productivity and helps to become a good Frontend developer. Because as a Frontend developer our job is to make things simple and easy to use and keep in mind that user experience should not compramise. The term "User Experience" we used here is not actualy a part of Frontend but it is more releated to Web Design. This can be a debatable topic that a Frontend developer must have a good knowledge about designing and user experience and all of that. This question dosen't really matter a lot the only thing that matters is if things are really helpful so why do we not learn them all. So lets learn. Just learn and make beatiful websites or UI or UX, whatever we can call it.
 
-# Key Takeaways
+# KEY TAKEAWAY
 
 1. Always start a web project with a brief.
 2. In the brief, be clear about what we're making and who are we making it for.

@@ -6,7 +6,7 @@ Colors are the way our eyes and brain perceive different wavelengths of light. V
 
 Different cultures and fields (such as art, design, and science) have various systems for categorizing and working with colors, including the RGB color model (used in digital screens) and the CMYK color model (used in printing).
 
-# Key Takeaways.
+# KEY TAKEAWAY
 
 Colors start with our eyes. When light hits something, our eyes catch the light that bounces off it. This light is made up of different wavelengths, and our eyes can tell these wavelengths apart. Our brain then takes this information and tells us what color we're seeing.
 
@@ -134,3 +134,19 @@ Let say we picked up a primary color for our project but the question is how do 
 
    - [Web Gradients for getting gradient colors](https://www.webgradients.com)
    - [Dribble for design that matches with the color](https://www.dribbble.com)
+
+# KEY TAKEAWAY
+
+1. Colors have different meanings in different scenarios or different cultures. To be more precise, Colors have different meanings in different context.
+
+2. Color harmonies allow us to easily create a color palette.
+
+3. A Complementory color palette will gives us the most contrast, while a Monochromatic one will gives us the least contrast.
+
+4. When starting the desing process, it's always easier to begin with the colors.
+
+5. Create the palette for Primary and Secondary color first, then move on to greys.
+
+6. When creating the greys, mix in a bit of the Primary color.
+
+7. Make sure that every color that we are using for text or interactive elements has enough "contrast".
