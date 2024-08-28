@@ -15,6 +15,10 @@
     }
 
     .btn {
-        @apply px-8 py-2 bg-orange-500 hover:bg-orange-600 rounded-sm outline-none border-none
+        @apply px-8 py-2 bg-orange-500 hover:bg-orange-400/10 rounded-sm outline-none border-none
+    }
+    
+    input {
+        @apply border-blue-400 px-2 py-1 font-bold text-sm rounded-md outline-none
     }
 }
