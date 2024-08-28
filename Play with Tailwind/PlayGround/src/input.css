@@ -4,9 +4,17 @@
 
 @layer base {
 
-    /* Reduce CSS re-dundecy problem */
+    /* Solution of CSS re-dundecy problem */
 
     h1 {
-        @apply p-4 text-center bg-violet-400 text-black font-bold
+        @apply text-2xl p-4 text-center bg-violet-400 text-black font-bold
+    }
+
+    a {
+        @apply decoration-wavy text-orange-300 hover:text-orange-500  transition
+    }
+
+    .btn {
+        @apply px-8 py-2 bg-orange-500 hover:bg-orange-600 rounded-sm outline-none border-none
     }
 }
