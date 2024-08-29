@@ -17,11 +17,13 @@ Keep in mind that we do not have too much width if we are making a website respo
 
 - Font-Size
 - Display Property
-- Use Tabs
-- Use Accordions
 - Adjust Images
 - Adjust Form width
-- Reduce Button widht
+- Reduce Button width and font size
   -----------------> etc.
 
--------------> Change Typography to make things responsive
+-------------> In short, Change Typography to make things responsive.
+
+## Making a Component Responsive.
+
+Think! -> Think! -> Think! -> Think! -> Think!
