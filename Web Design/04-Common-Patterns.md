@@ -44,3 +44,9 @@ A website header is usually the top section of a webpage that contains the logo,
 1. Review section about our products or services that we offeres to our client. They tells us that whether the product is helpful for them or not?
 2. Use Testimonials to establish credibility.
 3. Do not use fake testimonials ever. Because no testimonials is more better than fake testimonials.
+
+## Definition and Use Cases for Tabs
+
+1. A tab control is a UI element where content is seperated into different panles, with only one panel visible at a time. The hidden panels can then be accessed by user interaction.
+2. Tabs are used to displaying large amount of content in a relatively small area.
+3. While tabs can be styled differently, the operating principle(like styles, format, UI) is the same.
