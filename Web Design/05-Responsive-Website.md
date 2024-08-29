@@ -30,4 +30,24 @@ Keep in mind that we do not have too much width if we are making a website respo
 
 ## Making a Component Responsive.
 
+- <code>Design Perspective</code>
+
+  - Fluid Grid
+  - Flexible Images
+  - Responsive Typography
+  - Media Queries
+  - Mobile First Design
+  - Touch Friendly Elements
+  - Simplified Navigation
+  - Consistent Visual Hierarchy
+
+- <code>Development Perspective</code>
+  - Semantic HTML
+  - CSS Flexbox and Grid
+  - Viewport Meta-Tags
+  - Performance Optimization
+  - Testing across Devices
+  - Progressive Enchancement
+  - Conditional Loading
+
 Think! -> Think! -> Think! -> Think! -> Think!
