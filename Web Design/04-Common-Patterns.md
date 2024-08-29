@@ -37,3 +37,10 @@ A website header is usually the top section of a webpage that contains the logo,
 
 1. A website footer is an area positioned at the bottom of every page on a website, right below the main content.
 2. The Footer is also a perfect place for content that dosen't really belong anywhere else in the page. Things like -> Copyright text, Links to external resources, social media icons, etc.
+3. Footer usually contain the information that improves the usability of the website.
+
+## Definition and Use Cases for Testimonials
+
+1. Review section about our products or services that we offeres to our client. They tells us that whether the product is helpful for them or not?
+2. Use Testimonials to establish credibility.
+3. Do not use fake testimonials ever. Because no testimonials is more better than fake testimonials.
