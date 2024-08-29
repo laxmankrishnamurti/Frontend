@@ -24,7 +24,10 @@ Keep in mind that we do not have too much width if we are making a website respo
 - Adjust Images
 - Adjust Form width
 - Reduce Button width and font size
-  -----------------> etc.
+
+<br/>
+
+-----------------> etc.
 
 -------------> In short, Change Typography to make things responsive.
 
@@ -50,4 +53,4 @@ Keep in mind that we do not have too much width if we are making a website respo
   - Progressive Enchancement
   - Conditional Loading
 
-Think! -> Think! -> Think! -> Think! -> Think!
+CORE CONCEPT --> Think! -> Think! -> Think! -> Think! -> Think!
