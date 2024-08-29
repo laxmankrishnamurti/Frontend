@@ -1,5 +1,9 @@
 # What is a Responsive Website?
 
+A Responsive Website is a website that adjust their content with respect to the width of the device.
+
+One thing that we should keep in our mind while adding any element on the webpage and make them responsive is that how the content is going to adjust itself when widht is getting smaller and smaller. We can say this is the basics principle of making a Responsive Website.
+
 ## KEY TAKEAWAYS
 
 1. In the early days of the internet, all websites were non-responsive.
