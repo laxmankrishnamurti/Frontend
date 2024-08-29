@@ -36,3 +36,4 @@ A website header is usually the top section of a webpage that contains the logo,
 ## Definition and Use Cases for Image Footers
 
 1. A website footer is an area positioned at the bottom of every page on a website, right below the main content.
+2. The Footer is also a perfect place for content that dosen't really belong anywhere else in the page. Things like -> Copyright text, Links to external resources, social media icons, etc.
