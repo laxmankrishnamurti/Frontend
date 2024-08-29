@@ -70,6 +70,7 @@ This referes to how much space we should use inside and outside of an elements a
 - [Icon set](https://iconset.io)
 
 3. Pair the icons with text.
+4. Try to use icons inside a button that will give a beautiful look.
 
 ## Images
 

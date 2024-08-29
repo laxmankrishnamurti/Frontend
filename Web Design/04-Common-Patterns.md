@@ -56,3 +56,9 @@ A website header is usually the top section of a webpage that contains the logo,
 1. Unlike Tabs, accordions can display multiple panels at once and they're used for similar content, like text.
    - Ex -> Frequently asked questions(FaQ Section).
 2. Accordions can be nested to organize.
+
+## Definition and Use Cases for Contact Forms
+
+1. Used to get in touch with peoples
+2. Make it simple so that potential clients can easily get in touch.
+3. As a minimum, a contact form should require a name, and email address and the message.
