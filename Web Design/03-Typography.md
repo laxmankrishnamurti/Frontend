@@ -37,3 +37,40 @@ SOLUTION OF ATTRIBUTES :: [Type Scales](https://type-scale.com)
 4. Use tools like <code>Type Scale</code> <code>ArcheType</code> to make this task easier.
 
 5. If our design app allows it, create text styles for elements like heading and paragraphs.
+
+# Spacing and Sizing in Web Design
+
+This referes to how much space we should use inside and outside of an elements and also how big and small they should be.
+
+<code>Eight point system -> Every dimension is basically a multiple of 8. -> For Simplicity and Consistency (Create your own custom system)</code>
+
+# KEY TAKEAWAYS
+
+1. Spacinig and sizing are very important in UI design because they will dictate the amount of whitespace and also the visual hierarchy.
+
+2. For Spacing and Sizing elements, use the 8pt system where every margin, padding, widht, etc. is a multiple of 8.
+
+3. Grids are not always necessary and can sometimes add an unwanted degree of complexity to a project.
+
+4. Using guides is a perfect fine replacement for grids.
+
+# Icons and Images in Web Design.
+
+## Icons
+
+1. Icon should be meaningful. The icon should visually represent what the associated text is saying. The icon and text work together to tell a story.
+
+2. Icon sytle should be consistence.
+
+- [Bootstrap icons](https://icons.getbootstrap.com)
+- [Font awesom](https://fontawesome.com)
+- [Hero icons](https://heroicons.com)
+- [Ion Icons](https://ionic.io/ionicons)
+- [Forge Icons](https://icons.theforgesmith.com)
+- [Icon set](https://iconset.io)
+
+3. Pair the icons with text.
+
+## Images
+
+Try to use the real pictures on your website instead of using any random pictures to be genuine.
