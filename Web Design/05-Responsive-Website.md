@@ -23,3 +23,5 @@ Keep in mind that we do not have too much width if we are making a website respo
 - Adjust Form width
 - Reduce Button widht
   -----------------> etc.
+
+-------------> Change Typography to make things responsive
