@@ -14,7 +14,8 @@ const initialState = {
   login_status: false,
 };
 
-const store = createStore(UserReducer, applyMiddleware(logger));
+// const store = createStore(UserReducer, applyMiddleware(logger));
+const store = createStore(UserReducer);
 
 function UserReducer(state = initialState, action) {
   switch (action.type) {
@@ -22,6 +23,10 @@ function UserReducer(state = initialState, action) {
       return { ...state, username: action.payload };
 
     case incUserAge:
+      if (action.payload == "") {
+        window.alert("Payload required");
+        return state;
+      }
       if (state.age < 2 && Number(action.payload) < 0) {
         window.alert("Age should be less than 1");
         return { ...state, age: 1 };
