@@ -54,12 +54,12 @@ async function handleUsername() {
 
 setInterval(() => {
   // store.dispatch({ type: decrementInClass });
-  store.dispatch({ type: updateUsername, payload: "Harshad" });
+  // store.dispatch({ type: updateUsername, payload: "Harshad" });
   // store.dispatch({ type: incrementInAge, payload: 2 });
   // handleAgeIncrement();
   // handleClassDecrement(3);
   // handleUsername("Harshad Mehta");
   // handleUsername();
-  // store.dispatch(handleUsername()); //It works Synchronously it will not going to wait for any async action,
+  store.dispatch(handleUsername()); //It works Synchronously it will not going to wait for any async action,
   //err :- Action must be plain ojects. Insted, the actual type was : "promise". You may need to add middleware to your store setup to handle dispatching other values, such as 'redux-thunk' to handle dispatching functions.
 }, 1000);
