@@ -49,17 +49,16 @@ function handleClassDecrement(payload) {
 
 function handleUsername(id) {
   return async (dispatch, getState) => {
-    console.log("id :: ", id);
-    const { data } = await axios.get(`http://localhost:3000/accounts/${id}`);
-    console.log("data :: ", data);
-    dispatch(initUser(data.username));
+    const { data } = await axios.get(`http://localhost:3000/accounts/`);
+    // dispatch(initUser(data[0].username));
+    dispatch({ type: updateUsername, payload: data[0].username });
   };
 }
 
-function initUser(value) {
-  return { type: updateUsername, payload: value };
-}
+// function initUser(value) {
+//   return { type: updateUsername, payload: value };
+// }
 
 setTimeout(() => {
-  store.dispatch(handleUsername("d839"));
+  store.dispatch(handleUsername());
 }, 2000);
