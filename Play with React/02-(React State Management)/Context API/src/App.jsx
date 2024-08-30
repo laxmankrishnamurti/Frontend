@@ -1,12 +1,27 @@
-import { Header } from "./Components/index.components";
+import {
+  UserContextProvider,
+  ProductContextProvider,
+} from "./Context/index.contextProvider";
+import {
+  Header,
+  Form,
+  UserInfo,
+  ProductForm,
+  Product,
+} from "./Components/index.components";
 
 function App() {
   return (
     <>
-      <h1 className="bg-pink-400 text-center p-4 font-bold text-white text-2xl">
-        State Management with Context API
-      </h1>
-      <Header />
+      <UserContextProvider>
+        <Header />
+        <UserInfo />
+        <Form />
+      </UserContextProvider>
+      <ProductContextProvider>
+        <ProductForm />
+        <Product />
+      </ProductContextProvider>
     </>
   );
 }
