@@ -1,35 +1,73 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useSelector, useDispatch } from "react-redux";
+import {
+  handleIncUserAge,
+  handleUpdateUsername,
+  handleLoginStatus,
+} from "./stores/UserStore/UserStore";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  let data = useSelector((state) => state);
+
+  function handleUsername(e) {
+    e.preventDefault();
+    handleUpdateUsername(e.target[0].value);
+    e.target[0].value = "";
+  }
+
+  function handleUserage(e) {
+    e.preventDefault();
+    handleIncUserAge(e.target[0].value);
+    e.target[0].value = "";
+  }
 
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <form onSubmit={handleUsername}>
+          <input
+            type="text"
+            placeholder="Enter username"
+            className="border-2 border-red-500 px-1 py-1 outline-none rounded-md"
+          />
+          <button
+            type="submit"
+            className="bg-pink-400 text-white px-4 py-2 rounded-md mx-2 my-2"
+          >
+            Update Username
+          </button>
+        </form>
+
+        <form onSubmit={handleUserage}>
+          <input
+            type="number"
+            placeholder="Increase useage by"
+            className="border-2 border-red-500 px-1 py-1 outline-none rounded-md"
+          />
+          <button
+            type="submit"
+            className="bg-green-400 px-4 py-2 rounded-md mx-2 my-2"
+          >
+            Increase UserAge
+          </button>
+        </form>
+
+        <button onClick={handleLoginStatus} className="bg-sky-400 px-4 py-2">
+          Login
         </button>
+
+        <p>isLoggedIn : {String(data.login_status)}</p>
+        <p>Username is : {data.username}</p>
+        <p>User age is : {data.age}</p>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          User gitHub profile URL :{" "}
+          <a href={data.github_profile} target="_blank">
+            Go
+          </a>
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
