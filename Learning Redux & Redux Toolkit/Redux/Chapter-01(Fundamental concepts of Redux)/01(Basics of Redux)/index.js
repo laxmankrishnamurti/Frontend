@@ -19,8 +19,16 @@ function reducer(store = initialValue, action) {
   return store;
 }
 
-// store.dispatch({ type: "incrementInAge" });
-// store.dispatch({ type: "decrementInClass" });
+store.subscribe(() => {
+  console.log(store.getState());
+});
+
+store.dispatch({ type: "incrementInAge" });
+// console.log("new state after incrementing in age : ", store.getState());
+store.dispatch({ type: "decrementInClass" });
+store.dispatch({ type: "decrementInClass" });
+store.dispatch({ type: "decrementInClass" });
+// console.log("new state after decrement in class : ", store.getState());
 
 // store.dispatch({ type: "incrementInAge" });
 // store.dispatch({ type: "decrementInClass" });
@@ -28,15 +36,11 @@ function reducer(store = initialValue, action) {
 // console.log("store : ", store);
 // console.log("store type : ", typeof store);
 
-// store.subscribe(() => {
-//   console.log(store.getState());
-// });
+// setInterval(() => {
+//   store.dispatch({ type: "incrementInAge" });
+//   store.dispatch({ type: "decrementInClass" });
+//   history.push(store.getState());
+//   console.log("history :: ", history);
+// }, 2000);
 
-setInterval(() => {
-  store.dispatch({ type: "incrementInAge" });
-  store.dispatch({ type: "decrementInClass" });
-  history.push(store.getState());
-  console.log("history :: ", history);
-}, 2000);
-
-console.log("history : ", history);
+// console.log("history : ", history);
