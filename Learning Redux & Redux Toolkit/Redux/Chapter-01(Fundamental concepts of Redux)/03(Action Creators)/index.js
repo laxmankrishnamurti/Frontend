@@ -8,6 +8,7 @@ const initialValue = {
   age: 21,
 };
 
+//Action Creators
 const incrementInAge = "incrementInAge";
 const decrementInClass = "decrementInClass";
 const updateUsername = "updateUsername";
@@ -44,12 +45,13 @@ function handleUsername(payload) {
   store.dispatch({ type: updateUsername, payload: payload });
 }
 
+// handleUsername("Harshad Mehta");
+
 setInterval(() => {
   // store.dispatch({ type: decrementInClass });
   // store.dispatch({ type: updateUsername, payload: "Harshad" });
   // store.dispatch({ type: incrementInAge, payload: 2 });
-
-  // handleAgeIncrement(3);
-  // handleClassDecrement(3);
-  handleUsername("Harshad Mehta");
+  handleAgeIncrement(1);
+  // handleClassDecrement(1);
+  // handleUsername("Harshad Mehta");
 }, 1000);
