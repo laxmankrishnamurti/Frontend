@@ -1,6 +1,7 @@
 import { applyMiddleware, createStore } from "redux";
 import logger from "redux-logger";
 
+//Action Constants
 const updateUsername = "user/updateUsername";
 const incUserAge = "user/incrementUserAge";
 const loginStatus = "user/changeLoginStatus";
@@ -40,6 +41,8 @@ function UserReducer(state = initialState, action) {
       return state;
   }
 }
+
+//Action Creators
 
 export function handleUpdateUsername(payload) {
   store.dispatch({ type: updateUsername, payload: payload });
