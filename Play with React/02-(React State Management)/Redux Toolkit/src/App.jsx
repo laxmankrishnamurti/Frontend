@@ -1,33 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment, decrement, incrementByValue } from './features/counter/counterSlice'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const data = useSelector((state) => state.counter.value)
+  const dispath = useDispatch()
+
+  function handleInputDispatch(e) {
+    e.preventDefault()
+    dispath(incrementByValue(Number(e.target[0].value)))
+    e.target[0].value = ""
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>Data : {data}</p>
+      <button onClick={() => dispath(increment())} className='bg-violet-400 px-4 py-2 rounded-md mx-2'>Increase</button>
+      <button onClick={() => dispath(decrement())} className='bg-violet-400 px-4 py-2 rounded-md mx-2'>Decrease</button>
+      <form onSubmit={handleInputDispatch}>
+        <input type='text' placeholder='Input value' className='border-pink-400 border-2 px-2 py-1 rounded-md' />
+        <button type='submit' className='bg-violet-400 px-4 py-2 rounded-md mx-2'>Increase By Input valule</button>
+      </form >
     </>
   )
 }
