@@ -122,3 +122,18 @@ function App() {
 
 export default App;
 ```
+
+5. Add Multiple end-points
+
+```js
+endpoints: (builder) => ({
+  getUserById: builder.query({
+    query: (id) => `users/${id}`,
+  }),
+  getAllUsers: builder.query({
+    query: () => `users`,
+  }),
+});
+
+export const { useGetUserByIdQuery, useGetAllUsersQuery } = userApi;
+```
