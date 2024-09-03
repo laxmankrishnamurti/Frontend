@@ -25,3 +25,100 @@ Let's create a fake-json server to fetch data.
 $ sudo npm install -g json-server
 $ json-server ./users.json -p 3000(default port number)
 ```
+
+```js
+// src/services/users.js
+
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+export const userApi = createApi({
+  reducerPath: "userApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "http://localhost:3000/",
+  }),
+  endpoints: (builder) => ({
+    getUserById: builder.query({
+      query: (id) => `users/${id}`,
+    }),
+  }),
+});
+
+export const { useGetUserByIdQuery } = userApi;
+```
+
+2. Create a store and pass a reference of the service
+
+```js
+// src/store.js
+
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { userApi } from "./services/users";
+
+export const store = configureStore({
+  reducer: {
+    [userApi.reducerPath]: userApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(userApi.middleware),
+});
+
+setupListeners(store.dispatch);
+```
+
+3. Provide the store to React
+
+```jsx
+// main.jsx
+
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+
+import { store } from "./store.js";
+import { Provider } from "react-redux";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </StrictMode>
+);
+```
+
+4. Use the Query in a Component
+
+```jsx
+// src/App.jsx
+
+import { useGetUserByIdQuery } from "./services/users";
+import "./App.css";
+import { useEffect, useState } from "react";
+
+function App() {
+  const [userData, setUserData] = useState({});
+  const { data, isError, isFetching } = useGetUserByIdQuery("1");
+
+  useEffect(() => {
+    if (!isFetching && data) {
+      setUserData(data);
+    }
+  }, [isFetching, data]);
+
+  return (
+    <>
+      {isError ? (
+        <p>Oops..... Something went wrong</p>
+      ) : isFetching ? (
+        <p>Fetching</p>
+      ) : userData ? (
+        <p>Username is : {userData.name}</p>
+      ) : null}
+    </>
+  );
+}
+
+export default App;
+```
