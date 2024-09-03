@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Laxman Krishnamurti",
+      "class": "BCA Dropout",
+      "age": 21,
+      "email": "laxmankrishnamurti@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Kawya Krishnamurti",
+      "class": 3,
+      "age": 6,
+      "email": "kawyakrishnamurti@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Pallavi Jain",
+      "class": 1,
+      "age": 3,
+      "email": "pallavijain@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Vikram Dhanush",
+      "class": 9,
+      "age": 13,
+      "email": "vikramdhanush@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Anjali Kumari",
+      "class": "BSC.Nursing",
+      "age": 20,
+      "email": "anjalikumari@gmail.com"
+    }
+  ]
+}
