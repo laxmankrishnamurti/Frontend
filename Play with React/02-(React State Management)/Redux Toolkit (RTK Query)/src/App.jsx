@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 function App() {
   const [userData, setUserData] = useState({})
   const { data, isError, isFetching } = useGetUserByIdQuery('1')
-
+  console.log(useGetUserByIdQuery('2'))
   useEffect(() => {
     if (!isFetching && data) {
       setUserData(data)
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <p>Username is : {userData?.name}</p>
+      <p>Username is : {userData.name}</p>
     </>
   )
 }

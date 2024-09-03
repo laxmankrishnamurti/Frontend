@@ -8,8 +8,8 @@ export const userApi = createApi({
     endpoints: (builder) => ({
         getUserById: builder.query({
             query: (id) => `users/${id}`,
-        }),
-    }),
+        })
+    })
 })
 
 export const { useGetUserByIdQuery } = userApi
