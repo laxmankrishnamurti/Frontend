@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+tr {
+    @apply p-2 text-center bg-sky-200 my-1
+}

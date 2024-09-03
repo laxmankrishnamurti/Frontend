@@ -2,6 +2,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 import { userApi } from './services/users'
 
+console.log("userApi from store.js : ", userApi)
+
 export const store = configureStore({
     reducer: {
         [userApi.reducerPath]: userApi.reducer

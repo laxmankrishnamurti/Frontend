@@ -5,11 +5,16 @@ export const userApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: 'http://localhost:3000/'
     }),
-    endpoints: (builder) => ({
-        getUserById: builder.query({
-            query: (id) => `users/${id}`,
-        })
-    })
+    endpoints: (builder) => (
+        {
+            getUserById: builder.query({
+                query: (id) => `users/${id}`,
+            }),
+            getAllUsers: builder.query({
+                query: () => `users`,
+            })
+        }
+    )
 })
 
-export const { useGetUserByIdQuery } = userApi
+export const { useGetUserByIdQuery, useGetAllUsersQuery } = userApi
