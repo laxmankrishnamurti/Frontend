@@ -126,7 +126,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 ```
 
 ```jsx
-// Fomat - 02 (Optimized way to handle routes)
+// Format - 02 (Optimized way to handle routes)
 
 import {
   RouterProvider,
