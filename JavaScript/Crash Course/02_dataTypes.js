@@ -30,7 +30,7 @@ console.log(typeof null)            // object
  * Notes on JavaScript Data Types
  * 
  * A JavaScript variable can hold 8 types of data.
- *    - 7 Primitive Data Types
+ *    - 7 Primitive Data Types 
  *          - Numeric Type
  *                - Number (only accurate up to 15 digits. There is no such things as a JavaScript Integer. All JavaScript Numbers are 64-bit floating point.)
  *                - Bigint
@@ -40,7 +40,7 @@ console.log(typeof null)            // object
  *                - Null
  *                - Undefined
  *                - Symbol
- *    - 1 Object Data Type
+ *    - 1 Object Data Type (Non-Primitive)
  *          - Object
  *          - Array
  *          - Function
